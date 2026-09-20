@@ -7,6 +7,80 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/dariya.css">
     <link rel="stylesheet" href="css/gaukhar.css">
+    <style>
+        .product-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 25px !important;
+            max-width: 1200px !important;
+            margin: 30px auto !important;
+            padding: 0 15px !important;
+            box-sizing: border-box !important;
+        }
+
+        .product-card {
+            background-color: #FFFDF9 !important;
+            border: 1px solid #E5D5C5 !important;
+            border-radius: 12px !important;
+            padding: 15px !important;
+            text-align: center !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+
+        .product-card img {
+            width: 100% !important;
+            height: 340px !important;
+            object-fit: cover !important;
+            border-radius: 8px !important;
+        }
+
+        .product-option {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .product-option label {
+            font-size: 13px;
+            color: #5C061C;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .product-select {
+            width: 100% !important;
+            padding: 8px !important;
+            border: 1px solid #E5D5C5 !important;
+            border-radius: 6px !important;
+            background-color: #fff !important;
+        }
+
+        .add-to-cart-btn {
+            margin-top: 15px !important;
+            width: 100% !important;
+            padding: 10px !important;
+            background-color: #5C061C !important;
+            color: #fff !important;
+            border: none !important;
+            border-radius: 8px !important;
+            font-weight: bold !important;
+            cursor: pointer !important;
+        }
+
+        @media (max-width: 900px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        @media (max-width: 550px) {
+            .product-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -35,16 +109,16 @@
 
     <main>
         <section id="collection">
-            <h2>КҮЗГІ ТОПТАМАСЫ</h2>
-            <p>Жаңа маусымға арналған сәнді образдар</p>
+            <h2 style="text-align: center; color: #5C061C; margin-top: 30px;">КҮЗГІ ТОПТАМАСЫ</h2>
+            <p style="text-align: center; color: #666; font-style: italic;">Жаңа маусымға арналған сәнді образдар</p>
 
             <div class="product-grid">
 
-            </div>
+
                 <article class="product-card">
                     <h3>1-ОБРАЗ</h3>
                     <img src="images/togyz(1).png" alt="1-образ">
-                    <p class="price-amount" style="margin-top:10px;">36 990 ₸</p>
+                    <p class="price-amount" style="margin-top:10px; font-weight: bold;">36 990 ₸</p>
 
                     <div class="product-option">
                         <label>Киім түрі:</label>
@@ -68,11 +142,10 @@
                     <button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">🛒 Себетке қосу</button>
                 </article>
 
-              
                 <article class="product-card">
                     <h3>2-ОБРАЗ</h3>
                     <img src="images/togyz(2).png" alt="2-образ">
-                    <p class="price-amount" style="margin-top:10px;">30 980 ₸</p>
+                    <p class="price-amount" style="margin-top:10px; font-weight: bold;">30 980 ₸</p>
 
                     <div class="product-option">
                         <label>Киім түрі:</label>
@@ -95,11 +168,10 @@
                     <button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">🛒 Себетке қосу</button>
                 </article>
 
-                
                 <article class="product-card">
                     <h3>3-ОБРАЗ</h3>
                     <img src="images/togyz(3).png" alt="3-образ">
-                    <p class="price-amount" style="margin-top:10px;">35 970 ₸</p>
+                    <p class="price-amount" style="margin-top:10px; font-weight: bold;">35 970 ₸</p>
 
                     <div class="product-option">
                         <label>Киім түрі:</label>
@@ -126,7 +198,7 @@
                 <article class="product-card">
                     <h3>4-ОБРАЗ</h3>
                     <img src="images/togyz(4).png" alt="4-образ">
-                    <p class="price-amount" style="margin-top:10px;">39 990 ₸</p>
+                    <p class="price-amount" style="margin-top:10px; font-weight: bold;">39 990 ₸</p>
 
                     <div class="product-option">
                         <label>Киім түрі:</label>
@@ -150,7 +222,7 @@
                 <article class="product-card">
                     <h3>5-ОБРАЗ</h3>
                     <img src="images/togyz(5).png" alt="5-образ">
-                    <p class="price-amount" style="margin-top:10px;">26 990 ₸</p>
+                    <p class="price-amount" style="margin-top:10px; font-weight: bold;">26 990 ₸</p>
 
                     <div class="product-option">
                         <label>Киім түрі:</label>
@@ -175,7 +247,7 @@
                 <article class="product-card">
                     <h3>6-ОБРАЗ</h3>
                     <img src="images/togyz(6).png" alt="6-образ">
-                    <p class="price-amount" style="margin-top:10px;">31 980 ₸</p>
+                    <p class="price-amount" style="margin-top:10px; font-weight: bold;">31 980 ₸</p>
 
                     <div class="product-option">
                         <label>Киім түрі:</label>
@@ -197,48 +269,49 @@
 
                     <button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">🛒 Себетке қосу</button>
                 </article>
+
             </div>
         </section>
 
-        <section class="price-section">
-            <h2>ӨНІМДЕРДІҢ БАҒАЛАРЫ</h2>
-            <table class="price-table">
+        <section class="price-section" style="max-width: 1000px; margin: 50px auto; padding: 0 15px;">
+            <h2 style="text-align: center; color: #5C061C;">ӨНІМДЕРДІҢ БАҒАЛАРЫ</h2>
+            <table class="price-table" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
                 <thead>
-                    <tr>
-                        <th>Образ</th>
-                        <th>Өнім</th>
-                        <th style="text-align: right;">Бағасы</th>
+                    <tr style="background-color: #F7EFE5; color: #5C061C;">
+                        <th style="padding: 10px; border: 1px solid #E5D5C5;">Образ</th>
+                        <th style="padding: 10px; border: 1px solid #E5D5C5;">Өнім</th>
+                        <th style="padding: 10px; border: 1px solid #E5D5C5; text-align: right;">Бағасы</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td><span class="price-badge">1-образ</span></td><td>Ұзартылған жейде</td><td class="price-amount" style="text-align: right;">36 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">1-образ</span></td><td>Джинсы</td><td class="price-amount" style="text-align: right;">13 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">2-образ</span></td><td>Блузка</td><td class="price-amount" style="text-align: right;">16 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">2-образ</span></td><td>Аладдин шалбар</td><td class="price-amount" style="text-align: right;">13 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">3-образ</span></td><td>Футболка</td><td class="price-amount" style="text-align: right;">7 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">3-образ</span></td><td>Торкөзді жейде</td><td class="price-amount" style="text-align: right;">11 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">3-образ</span></td><td>Шалбар</td><td class="price-amount" style="text-align: right;">15 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">4-образ</span></td><td>Зығыр көйлек</td><td class="price-amount" style="text-align: right;">39 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">5-образ</span></td><td>Костюм-комплект</td><td class="price-amount" style="text-align: right;">26 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">6-образ</span></td><td>Тор кофта</td><td class="price-amount" style="text-align: right;">11 990 ₸</td></tr>
-                    <tr><td><span class="price-badge">6-образ</span></td><td>Белдемше</td><td class="price-amount" style="text-align: right;">19 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">1-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Ұзартылған жейде</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">36 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">1-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Джинсы</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">13 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">2-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Блузка</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">16 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">2-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Аладдин шалбар</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">13 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">3-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Футболка</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">7 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">3-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Торкөзді жейде</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">11 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">3-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Шалбар</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">15 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">4-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Зығыр көйлек</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">39 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">5-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Костюм-комплект</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">26 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">6-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Тор кофта</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">11 990 ₸</td></tr>
+                    <tr><td style="padding: 8px; border: 1px solid #E5D5C5;"><span class="price-badge">6-образ</span></td><td style="padding: 8px; border: 1px solid #E5D5C5;">Белдемше</td><td class="price-amount" style="padding: 8px; border: 1px solid #E5D5C5; text-align: right;">19 990 ₸</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section style="margin-top: 50px; text-align: center;">
+        <section style="margin-top: 50px; text-align: center; margin-bottom: 50px;">
             <h2 style="color: #5C061C;">КИІМ САНАТТАРЫ</h2>
-            <ul class="categories-container">
-                <li class="category-card">Сыртқы киімдер</li>
-                <li class="category-card">Жейделер</li>
-                <li class="category-card">Шалбарлар</li>
-                <li class="category-card">Белдемшелер</li>
-                <li class="category-card">Көйлектер</li>
+            <ul class="categories-container" style="display: flex; justify-content: center; gap: 15px; list-style: none; padding: 0; flex-wrap: wrap;">
+                <li class="category-card" style="background-color: #FFFDF9; border: 1px solid #E5D5C5; padding: 10px 20px; border-radius: 20px; color: #5C061C; font-weight: bold;">Сыртқы киімдер</li>
+                <li class="category-card" style="background-color: #FFFDF9; border: 1px solid #E5D5C5; padding: 10px 20px; border-radius: 20px; color: #5C061C; font-weight: bold;">Жейделер</li>
+                <li class="category-card" style="background-color: #FFFDF9; border: 1px solid #E5D5C5; padding: 10px 20px; border-radius: 20px; color: #5C061C; font-weight: bold;">Шалбарлар</li>
+                <li class="category-card" style="background-color: #FFFDF9; border: 1px solid #E5D5C5; padding: 10px 20px; border-radius: 20px; color: #5C061C; font-weight: bold;">Белдемшелер</li>
+                <li class="category-card" style="background-color: #FFFDF9; border: 1px solid #E5D5C5; padding: 10px 20px; border-radius: 20px; color: #5C061C; font-weight: bold;">Көйлектер</li>
             </ul>
         </section>
     </main>
 
-    <footer>
+    <footer style="text-align: center; padding: 20px; border-top: 1px solid #E5D5C5;">
         <p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
     </footer>
 </body>

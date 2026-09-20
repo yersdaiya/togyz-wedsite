@@ -400,3 +400,33 @@ kbd {
     border-radius: 6px !important;
     font-size: 13px !important;
 }
+
+.product-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 25px !important;                            
+    max-width: 1200px !important;
+    margin: 30px auto !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+}
+
+.product-card {
+    background-color: #FFFDF9 !important;
+    border: 1px solid #E5D5C5 !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+.product-card img {
+    width: 100% !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+}
