@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Себет — TOGYZ BRAND</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/dariya.css">
-    <link rel="stylesheet" href="css/gaukhar.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Себет — TOGYZ BRAND</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/dariya.css">
 </head>
 <body>
-
-    <header class="main-header">
-        <div class="header-top-bar">
-            <div class="brand-header">
-                <h1><a href="index.html">TOGYZ BRAND</a></h1>
-            </div>
-            <div class="user-actions">
-                <a href="#login" class="auth-btn">Кіру</a>
-                <a href="#signup" class="auth-btn signup-btn">Тіркелу</a>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">БАСТЫ БЕТ</a></li>
-            <li><a href="catalog.html">КАТАЛОГ</a></li>
-            <li><a href="size-guide.html">ӨЛШЕМДЕР КЕСТЕCІ</a></li>
-            <li><a href="order.html">ТАПСЫРЫС БЕРУ</a></li>
-            <li><a href="reviews.html">ПІКІРЛЕР</a></li>
-            <li><a href="cart.html">СЕБЕТ 🛒</a></li>
-        </ul>
-    </nav>
-
-    <main style="max-width: 900px; margin: 40px auto; padding: 0 20px;">
-        <h2 style="text-align: center; color: #5C061C;">Сіздің себетіңіз</h2>
-
-        <table class="price-table" style="margin-top: 25px;">
-            <thead>
-                <tr>
-                    <th>Тауар</th>
-                    <th>Өлшемі</th>
-                    <th>Түсі</th>
-                    <th>Бағасы</th>
-                    <th>Жою</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>1-ОБРАЗ (Ұзартылған жейде)</strong></td>
-                    <td>M (44)</td>
-                    <td>Қара</td>
-                    <td class="price-amount">36 990 ₸</td>
-                    <td style="text-align: center;"><button style="background: none; border: none; color: #5C061C; cursor: pointer; font-size: 16px;">❌</button></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="margin-top: 30px; text-align: right; background-color: #FFFDF9; padding: 20px; border: 1px solid #E5D5C5; border-radius: 12px;">
-            <p style="font-size: 18px; color: #5C061C;"><strong>Барлығы: 36 990 ₸</strong></p>
-            <a href="order.html" style="display: inline-block; margin-top: 15px; padding: 12px 28px; background-color: #5C061C; color: #fff; border-radius: 8px; font-weight: 600;">Тапсырысты рәсімдеу →</a>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
-    </footer>
+<header class="main-header">
+<div class="header-top-bar">
+<div class="brand-header">
+<h1><a href="index.html">TOGYZ BRAND</a></h1>
+</div>
+<div class="user-actions">
+<button onclick="openModal('login-modal')" class="auth-btn">Кіру</button>
+<button onclick="openModal('signup-modal')" class="auth-btn signup-btn">Тіркелу</button>
+</div>
+</div>
+</header>
+<nav>
+<ul class="nav-list">
+<li><a href="index.html">БАСТЫ БЕТ</a></li>
+<li><a href="catalog.html">КАТАЛОГ</a></li>
+<li><a href="size-guide.html">ӨЛШЕМДЕР КЕСТЕСІ</a></li>
+<li><a href="order.html">ТАПСЫРЫС БЕРУ</a></li>
+<li><a href="reviews.html">ПІКІРЛЕР</a></li>
+<li><a href="cart.html" class="active">СЕБЕТ 🛒</a></li>
+</ul>
+</nav>
+<main class="page-container-wide">
+<h2>Сіздің себетіңіз</h2>
+<table class="price-table">
+<thead>
+<tr>
+<th>Тауар</th>
+<th>Өлшемі</th>
+<th>Түсі</th>
+<th>Бағасы</th>
+<th>Жою</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1-ОБРАЗ (Ұзартылған жейде)</strong></td>
+<td>M (44)</td>
+<td>Қара</td>
+<td class="price-amount">36 990 ₸</td>
+<td class="text-center"><button class="remove-btn">X</button></td>
+</tr>
+</tbody>
+</table>
+<div class="cart-summary-box">
+<p class="total-price-text"><strong>Барлығы: 36 990 ₸</strong></p>
+<a href="order.html" class="checkout-btn">Тапсырысты рәсімдеу →</a>
+</div>
+</main>
+<footer>
+<p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
+</footer>
 </body>
 </html>

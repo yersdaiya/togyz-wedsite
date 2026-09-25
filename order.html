@@ -1,114 +1,104 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тапсырыс беру — TOGYZ BRAND</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/dariya.css">
-    <link rel="stylesheet" href="css/gaukhar.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тапсырыс беру — TOGYZ BRAND</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/gaukhar.css">
 </head>
 <body>
+<header class="main-header">
+<div class="header-top-bar">
+<div class="brand-header">
+<h1><a href="index.html">TOGYZ BRAND</a></h1>
+</div>
+<div class="user-actions">
+<button onclick="openModal('login-modal')" class="auth-btn">Кіру</button>
+<button onclick="openModal('signup-modal')" class="auth-btn signup-btn">Тіркелу</button>
+</div>
+</div>
+</header>
+<nav>
+<ul class="nav-list">
+<li><a href="index.html">БАСТЫ БЕТ</a></li>
+<li><a href="catalog.html">КАТАЛОГ</a></li>
+<li><a href="size-guide.html">ӨЛШЕМДЕР КЕСТЕСІ</a></li>
+<li><a href="order.html" class="active">ТАПСЫРЫС БЕРУ</a></li>
+<li><a href="reviews.html">ПІКІРЛЕР</a></li>
+<li><a href="cart.html">СЕБЕТ 🛒</a></li>
+</ul>
+</nav>
+<main class="page-container">
+<h2>ТАПСЫРЫС БЕРУ</h2>
 
-    <header class="main-header">
-        <div class="header-top-bar">
-            <div class="brand-header">
-                <h1><a href="index.html">TOGYZ BRAND</a></h1>
-            </div>
-            <div class="user-actions">
-                <button onclick="openModal('login-modal')" class="auth-btn">Кіру</button>
-                <button onclick="openModal('signup-modal')" class="auth-btn signup-btn">Тіркелу</button>
-            </div>
-        </div>
-    </header>
+<!-- DEMO: Жалғыз inline style атрибуты (Cascade demo үшін) -->
+<section class="form-section" style="border-top: 4px solid #5C061C;">
+<form onsubmit="alert('Тапсырысыңыз қабылданды!'); return false;" class="custom-form">
+<div class="form-group">
+<label for="fullname">Аты-жөніңіз:</label>
+<input type="text" id="fullname" placeholder="Толық аты-жөніңізді енгізіңіз" required>
+</div>
 
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">БАСТЫ БЕТ</a></li>
-            <li><a href="catalog.html">КАТАЛОГ</a></li>
-            <li><a href="size-guide.html">ӨЛШЕМДЕР КЕСТЕCІ</a></li>
-            <li><a href="order.html" class="active">ТАПСЫРЫС БЕРУ</a></li>
-            <li><a href="reviews.html">ПІКІРЛЕР</a></li>
-            <li><a href="cart.html">СЕБЕТ 🛒</a></li>
-        </ul>
-    </nav>
+<div class="form-group">
+<label for="phone">Телефон нөміріңіз:</label>
+<input type="tel" id="phone" placeholder="+7 (700) 000-00-00" required>
+</div>
 
-    <main style="max-width: 700px; margin: 40px auto; padding: 0 20px;">
-        <h2 style="text-align: center; color: #5C061C; letter-spacing: 2px; margin-bottom: 30px;">ТАПСЫРЫСТЫ РЕСМІДЕУ</h2>
+<!-- Жеткізу аймағы: Қалалар мен облыстар тізімі -->
+<div class="form-group">
+<label for="region">Жеткізу аймағы (Қала / Облыс):</label>
+<select id="region" required class="form-select">
+<option value="">Аймақты таңдаңыз...</option>
+<optgroup label="Республикалық маңызы бар қалалар">
+<option value="astana">Астана қаласы</option>
+<option value="almaty">Алматы қаласы</option>
+<option value="shymkent">Шымкент қаласы</option>
+</optgroup>
+<optgroup label="Облыстар">
+<option value="zko">Батыс Қазақстан облысы (Орал)</option>
+<option value="akmola">Ақмола облысы (Көкшетау)</option>
+<option value="aktobe">Ақтөбе облысы</option>
+<option value="almaty-obl">Алматы облысы (Қонаев)</option>
+<option value="atyrau">Атырау облысы</option>
+<option value="zhabyl">Жамбыл облысы (Тараз)</option>
+<option value="zhetysu">Жетісу облысы (Талдықорған)</option>
+<option value="karaganda">Қарағанды облысы</option>
+<option value="kostanay">Қостанай облысы</option>
+<option value="kyzylorda">Қызылорда облысы</option>
+<option value="mangystau">Маңғыстау облысы (Ақтау)</option>
+<option value="pavlodar">Павлодар облысы</option>
+<option value="sko">Солтүстік Қазақстан облысы (Петропавл)</option>
+<option value="turkestan">Түркістан облысы</option>
+<option value="vko">Шығыс Қазақстан облысы (Өскемен)</option>
+<option value="abai">Абай облысы (Семей)</option>
+<option value="ulytau">Ұлытау облысы (Жезқазған)</option>
+</optgroup>
+</select>
+</div>
 
-        <section style="background-color: #FFFDF9; border: 1px solid #E5D5C5; border-radius: 12px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
-            <form onsubmit="alert('Тапсырысыңыз сәтті қабылданды! Жақын арада менеджер хабарласады.'); return false;" style="display: flex; flex-direction: column; gap: 20px;">
-                
-                <div>
-                    <label style="color: #5C061C; font-weight: 600; display: block; margin-bottom: 6px;">Толық аты-жөніңіз (ФИО):</label>
-                    <input type="text" placeholder="Мысалы: Ерсайнова Дария" style="width: 100%; padding: 12px; border: 1px solid #E5D5C5; border-radius: 8px; box-sizing: border-box;" required>
-                </div>
+<div class="form-group">
+<label for="address">Жеткізу мекенжайы:</label>
+<input type="text" id="address" placeholder="Көше, үй, пәтер" required>
+</div>
 
-                <div>
-                    <label style="color: #5C061C; font-weight: 600; display: block; margin-bottom: 6px;">Телефон нөміріңіз:</label>
-                    <input type="tel" placeholder="+7 (700) 000-00-00" style="width: 100%; padding: 12px; border: 1px solid #E5D5C5; border-radius: 8px; box-sizing: border-box;" required>
-                </div>
+<!-- Төлем түрін таңдау -->
+<div class="form-group">
+<label for="payment">Төлем түрі:</label>
+<select id="payment" required class="form-select">
+<option value="">Төлем әдісін таңдаңыз...</option>
+<option value="kaspi-qr">Kaspi QR / Red / Плюс</option>
+<option value="card">Банк картасымен онлайн төлеу</option>
+<option value="cash">Жеткізілгенде қолма-қол төлеу</option>
+</select>
+</div>
 
-                <div>
-                    <label style="color: #5C061C; font-weight: 600; display: block; margin-bottom: 6px;">Жеткізу аймағы (Облыс / Қала):</label>
-                    <select style="width: 100%; padding: 12px; border: 1px solid #E5D5C5; border-radius: 8px; box-sizing: border-box; background-color: #fff;" required>
-                        <option value="">Аймақты таңдаңыз...</option>
-                        <optgroup label="Республикалық маңызы бар қалалар">
-                            <option value="astana">Астана қаласы</option>
-                            <option value="almaty">Алматы қаласы</option>
-                            <option value="shymkent">Шымкент қаласы</option>
-                        </optgroup>
-                        <optgroup label="Облыстар">
-                            <option value="abai">Абай облысы (Семей)</option>
-                            <option value="akmola">Ақмола облысы (Көкшетау)</option>
-                            <option value="aktobe">Ақтөбе облысы (Ақтөбе)</option>
-                            <option value="almaty-obl">Алматы облысы (Қонаев)</option>
-                            <option value="attyrau">Атырау облысы (Атырау)</option>
-                            <option value="zhetysu">Жетісу облысы (Талдықорған)</option>
-                            <option value="zhambyl">Жамбыл облысы (Тараз)</option>
-                            <option value="zko">Батыс Қазақстан облысы (Орал)</option>
-                            <option value="karaganda">Қарағанды облысы (Қарағанды)</option>
-                            <option value="kostanay">Қостанай облысы (Қостанай)</option>
-                            <option value="kyzylorda">Қызылорда облысы (Қызылорда)</option>
-                            <option value="mangystau">Маңғыстау облысы (Ақтау)</option>
-                            <option value="pavloda">Павлодар облысы (Павлодар)</option>
-                            <option value="sko">Солтүстік Қазақстан облысы (Петропавл)</option>
-                            <option value="turkestan">Түркістан облысы (Түркістан)</option>
-                            <option value="ulytau">Ұлытау облысы (Жезқазған)</option>
-                            <option value="vko">Шығыс Қазақстан облысы (Өскемен)</option>
-                        </optgroup>
-                    </select>
-                </div>
-
-                <div>
-                    <label style="color: #5C061C; font-weight: 600; display: block; margin-bottom: 6px;">Дәл жеткізу мекенжайы (Көше, үй, пәтер):</label>
-                    <input type="text" placeholder="Мысалы: Достық көшесі, 12 үй, 45 пәтер" style="width: 100%; padding: 12px; border: 1px solid #E5D5C5; border-radius: 8px; box-sizing: border-box;" required>
-                </div>
-
-                <div>
-                    <label style="color: #5C061C; font-weight: 600; display: block; margin-bottom: 6px;">Төлем түрі:</label>
-                    <select style="width: 100%; padding: 12px; border: 1px solid #E5D5C5; border-radius: 8px; box-sizing: border-box; background-color: #fff;">
-                        <option value="kaspi">Kaspi QR / Kaspi Red</option>
-                        <option value="card">Банк картасымен (Онлайн)</option>
-                        <option value="cash">Жеткізілгенде қолма-қол төлеу</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label style="color: #5C061C; font-weight: 600; display: block; margin-bottom: 6px;">Тапсырысқа қосымша ескертпе (қосымша):</label>
-                    <textarea placeholder="Жеткізу уақыты немесе курьерге ескертпе..." style="width: 100%; padding: 12px; border: 1px solid #E5D5C5; border-radius: 8px; height: 80px; box-sizing: border-box;"></textarea>
-                </div>
-
-                <button type="submit" style="padding: 14px; background-color: #5C061C; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 10px; transition: 0.3s;">
-                    Тапсырысты растау
-                </button>
-            </form>
-        </section>
-    </main>
-
-    <footer style="text-align: center; margin-top: 50px; padding: 20px;">
-        <p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
-    </footer>
-
+<button type="submit" class="submit-btn">Тапсырысты растау</button>
+</form>
+</section>
+</main>
+<footer>
+<p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
+</footer>
 </body>
 </html>

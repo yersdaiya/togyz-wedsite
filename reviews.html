@@ -1,74 +1,63 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пікірлер — TOGYZ BRAND</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/dariya.css">
-    <link rel="stylesheet" href="css/gaukhar.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пікірлер — TOGYZ BRAND</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/gaukhar.css">
 </head>
 <body>
-
-    <header class="main-header">
-        <div class="header-top-bar">
-            <div class="brand-header">
-                <h1><a href="index.html">TOGYZ BRAND</a></h1>
-            </div>
-            <div class="user-actions">
-                <button onclick="openModal('login-modal')" class="auth-btn">Кіру</button>
-                <button onclick="openModal('signup-modal')" class="auth-btn signup-btn">Тіркелу</button>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <ul class="nav-list">
-            <li><a href="index.html">БАСТЫ БЕТ</a></li>
-            <li><a href="catalog.html">КАТАЛОГ</a></li>
-            <li><a href="size-guide.html">ӨЛШЕМДЕР КЕСТЕCІ</a></li>
-            <li><a href="order.html">ТАПСЫРЫС БЕРУ</a></li>
-            <li><a href="reviews.html">ПІКІРЛЕР</a></li>
-            <li><a href="cart.html">СЕБЕТ 🛒</a></li>
-        </ul>
-    </nav>
-
-    <main style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-        <h2 style="text-align: center; color: #5C061C; letter-spacing: 2px; margin-bottom: 30px;">ТҰТЫНУШЫЛАРДЫҢ ПІКІРЛЕРІ</h2>
-
-        <!-- Пікір қалдыру формасы -->
-        <section style="background-color: #FFFDF9; border: 1px solid #E5D5C5; border-radius: 12px; padding: 25px; margin-bottom: 40px;">
-            <h3 style="color: #5C061C; margin-bottom: 15px; text-align: center; letter-spacing: 1px;">ПІКІР ҚАЛДЫРУ</h3>
-            <form onsubmit="alert('Пікіріңізге рахмет!'); return false;" style="display: flex; flex-direction: column; gap: 15px;">
-                <div>
-                    <label style="color: #5C061C; font-weight: 600; display: block; margin-bottom: 5px;">Атыңыз:</label>
-                    <input type="text" placeholder="Атыңызды енгізіңіз" style="width: 100%; padding: 10px; border: 1px solid #E5D5C5; border-radius: 6px; box-sizing: border-box;" required>
-                </div>
-                <div>
-                    <label style="color: #5C061C; font-weight: 600; display: block; margin-bottom: 5px;">Пікіріңіз:</label>
-                    <textarea placeholder="Дүкен немесе киім сапасы туралы пікіріңізді жазыңыз..." style="width: 100%; padding: 10px; border: 1px solid #E5D5C5; border-radius: 6px; height: 100px; box-sizing: border-box;" required></textarea>
-                </div>
-                <button type="submit" style="padding: 12px; background-color: #5C061C; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">Пікірді жіберу</button>
-            </form>
-        </section>
-
-        <!-- Бұрынғы пікірлер тізімі -->
-        <div style="display: flex; flex-direction: column; gap: 20px;">
-            <div style="background-color: #FFFDF9; border: 1px solid #E5D5C5; border-radius: 12px; padding: 20px;">
-                <h4 style="color: #5C061C; margin: 0 0 10px 0; text-align: center;">АЙГЕРІМ:</h4>
-                <p style="margin: 0; color: #333; text-align: center;">Көйлектің сапасы өте керемет, дәл өлшеміме келді. Рахмет TOGYZ BRAND!</p>
-            </div>
-
-            <div style="background-color: #FFFDF9; border: 1px solid #E5D5C5; border-radius: 12px; padding: 20px;">
-                <h4 style="color: #5C061C; margin: 0 0 10px 0; text-align: center;">ДИНАРА:</h4>
-                <p style="margin: 0; color: #333; text-align: center;">Жеткізу өте жылдам болды. Заттарының тігісі таза, матасы ұнады.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer style="text-align: center; margin-top: 50px; padding: 20px;">
-        <p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
-    </footer>
-
+<header class="main-header">
+<div class="header-top-bar">
+<div class="brand-header">
+<h1><a href="index.html">TOGYZ BRAND</a></h1>
+</div>
+<div class="user-actions">
+<button onclick="openModal('login-modal')" class="auth-btn">Кіру</button>
+<button onclick="openModal('signup-modal')" class="auth-btn signup-btn">Тіркелу</button>
+</div>
+</div>
+</header>
+<nav>
+<ul class="nav-list">
+<li><a href="index.html">БАСТЫ БЕТ</a></li>
+<li><a href="catalog.html">КАТАЛОГ</a></li>
+<li><a href="size-guide.html">ӨЛШЕМДЕР КЕСТЕСІ</a></li>
+<li><a href="order.html">ТАПСЫРЫС БЕРУ</a></li>
+<li><a href="reviews.html" class="active">ПІКІРЛЕР</a></li>
+<li><a href="cart.html">СЕБЕТ 🛒</a></li>
+</ul>
+</nav>
+<main class="page-container">
+<h2>ТҰТЫНУШЫЛАРДЫҢ ПІКІРЛЕРІ</h2>
+<section class="form-section">
+<h3 class="form-title">Пікір қалдыру</h3>
+<form onsubmit="alert('Пікіріңізге рахмет!'); return false;" class="custom-form">
+<div class="form-group">
+<label>Атыңыз:</label>
+<input type="text" placeholder="Атыңызды енгізіңіз" required>
+</div>
+<div class="form-group">
+<label>Пікіріңіз:</label>
+<textarea placeholder="Дүкен немесе киім сапасы туралы пікіріңізді жазыңыз..." required></textarea>
+</div>
+<button type="submit" class="submit-btn">Пікірді жіберу</button>
+</form>
+</section>
+<div class="reviews-list">
+<div class="review-box">
+<p class="review-name">Айгерім:</p>
+<p class="review-comment">Көйлектің сапасы өте керемет, дәл өлшеміме келді. Рахмет TOGYZ BRAND!</p>
+</div>
+<div class="review-box">
+<p class="review-name">Динара:</p>
+<p class="review-comment">Жеткізу өте жылдам болды. Заттарының тігісі таза, матасы ұнады.</p>
+</div>
+</div>
+</main>
+<footer>
+<p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
+</footer>
 </body>
 </html>
