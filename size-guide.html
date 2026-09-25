@@ -14,8 +14,8 @@
 <h1><a href="index.html">TOGYZ BRAND</a></h1>
 </div>
 <div class="user-actions">
-<button onclick="openModal('login-modal')" class="auth-btn">Кіру</button>
-<button onclick="openModal('signup-modal')" class="auth-btn signup-btn">Тіркелу</button>
+  <a href="#login-modal" class="auth-btn">Кіру</a>
+  <a href="#signup-modal" class="auth-btn signup-btn">Тіркелу</a>
 </div>
 </div>
 </header>
@@ -51,5 +51,43 @@
 <footer>
 <p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
 </footer>
+<div id="login-modal" class="modal-overlay">
+  <div class="modal-content">
+    <a href="#" class="close-btn">&times;</a>
+    <h3>Жүйеге кіру</h3>
+    <form class="auth-form">
+      <div class="form-group">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label for="login-pass">Құпия сөз:</label>
+        <input type="password" id="login-pass" required>
+      </div>
+      <button type="submit" class="submit-btn">Кіру</button>
+    </form>
+  </div>
+</div>
+<div id="signup-modal" class="modal-overlay">
+  <div class="modal-content">
+    <a href="#" class="close-btn">&times;</a>
+    <h3>Тіркелу</h3>
+    <form class="auth-form">
+      <div class="form-group">
+        <label for="reg-name">Аты-жөні:</label>
+        <input type="text" id="reg-name" required>
+      </div>
+      <div class="form-group">
+        <label for="reg-email">Email:</label>
+        <input type="email" id="reg-email" required>
+      </div>
+      <div class="form-group">
+        <label for="reg-pass">Құпия сөз:</label>
+        <input type="password" id="reg-pass" required>
+      </div>
+      <button type="submit" class="submit-btn">Тіркелу</button>
+    </form>
+  </div>
+</div>
 </body>
 </html>

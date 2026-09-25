@@ -14,11 +14,13 @@
 <h1><a href="index.html">TOGYZ BRAND</a></h1>
 </div>
 <div class="user-actions">
-<button onclick="openModal('login-modal')" class="auth-btn">Кіру</button>
-<button onclick="openModal('signup-modal')" class="auth-btn signup-btn">Тіркелу</button>
+<!-- JS-сіз ашылу үшін <a> сілтемесіне ауыстырылды -->
+<a href="#login-modal" class="auth-btn">Кіру</a>
+<a href="#signup-modal" class="auth-btn signup-btn">Тіркелу</a>
 </div>
 </div>
 </header>
+
 <nav>
 <ul class="nav-list">
 <li><a href="index.html">БАСТЫ БЕТ</a></li>
@@ -29,151 +31,161 @@
 <li><a href="cart.html">СЕБЕТ 🛒</a></li>
 </ul>
 </nav>
-<main>
+
+<main class="page-container-wide">
 <section id="collection">
 <h2>КҮЗГІ ТОПТАМАСЫ</h2>
 <p class="subtitle">Жаңа маусымға арналған сәнді образдар</p>
+
+<!-- CSS Grid Контейнері -->
 <div class="product-grid">
 
-<article class="product-card">
+<!-- 1-ОБРАЗ (Span 2: CSS Grid талабына сай) -->
+<article class="product-card featured-card">
 <h3>1-ОБРАЗ</h3>
 <img src="images/togyz(1).png" alt="1-образ">
 <p class="price-amount">36 990 ₸</p>
 <div class="product-option">
-<label>Киім түрі:</label>
-<select class="product-select">
-<option>Толық образ (Комплект)</option>
-<option>Ұзартылған жейде</option>
-<option>Джинсы</option>
+<label for="select-item-1">Киім түрі:</label>
+<select id="select-item-1" class="product-select">
+<option value="36990">Толық образ (Комплект) — 36 990 ₸</option>
+<option value="23000">Ұзартылған жейде — 23 000 ₸</option>
+<option value="13990">Джинсы — 13 990 ₸</option>
 </select>
 </div>
 <div class="product-option">
-<label>Өлшемі:</label>
-<select class="product-select">
+<label for="select-size-1">Өлшемі:</label>
+<select id="select-size-1" class="product-select">
 <option>S (42)</option>
 <option>M (44)</option>
 <option>L (46)</option>
 <option>XL (48)</option>
 </select>
 </div>
-<button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">Себетке қосу</button>
+<button type="button" class="add-to-cart-btn">Себетке қосу</button>
 </article>
 
+<!-- 2-ОБРАЗ -->
 <article class="product-card">
 <h3>2-ОБРАЗ</h3>
 <img src="images/togyz(2).png" alt="2-образ">
 <p class="price-amount">30 980 ₸</p>
 <div class="product-option">
-<label>Киім түрі:</label>
-<select class="product-select">
-<option>Толық образ (Комплект)</option>
-<option>Блузка</option>
-<option>Аладдин шалбар</option>
+<label for="select-item-2">Киім түрі:</label>
+<select id="select-item-2" class="product-select">
+<option>Толық образ (Комплект) — 30 980 ₸</option>
+<option>Блузка — 16 990 ₸</option>
+<option>Аладдин шалбар — 13 990 ₸</option>
 </select>
 </div>
 <div class="product-option">
-<label>Өлшемі:</label>
-<select class="product-select">
+<label for="select-size-2">Өлшемі:</label>
+<select id="select-size-2" class="product-select">
 <option>S (42)</option>
 <option>M (44)</option>
 <option>L (46)</option>
 </select>
 </div>
-<button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">Себетке қосу</button>
+<button type="button" class="add-to-cart-btn">Себетке қосу</button>
 </article>
 
+<!-- 3-ОБРАЗ -->
 <article class="product-card">
 <h3>3-ОБРАЗ</h3>
 <img src="images/togyz(3).png" alt="3-образ">
 <p class="price-amount">35 970 ₸</p>
 <div class="product-option">
-<label>Киім түрі:</label>
-<select class="product-select">
-<option>Толық образ (Комплект)</option>
-<option>Торкөзді жейде</option>
-<option>Футболка</option>
-<option>Шалбар</option>
+<label for="select-item-3">Киім түрі:</label>
+<select id="select-item-3" class="product-select">
+<option>Толық образ (Комплект) — 35 970 ₸</option>
+<option>Торкөзді жейде — 11 990 ₸</option>
+<option>Футболка — 7 990 ₸</option>
+<option>Шалбар — 15 990 ₸</option>
 </select>
 </div>
 <div class="product-option">
-<label>Өлшемі:</label>
-<select class="product-select">
+<label for="select-size-3">Өлшемі:</label>
+<select id="select-size-3" class="product-select">
 <option>S (42)</option>
 <option>M (44)</option>
 <option>L (46)</option>
 </select>
 </div>
-<button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">Себетке қосу</button>
+<button type="button" class="add-to-cart-btn">Себетке қосу</button>
 </article>
 
+<!-- 4-ОБРАЗ -->
 <article class="product-card">
 <h3>4-ОБРАЗ</h3>
 <img src="images/togyz(4).png" alt="4-образ">
 <p class="price-amount">39 990 ₸</p>
 <div class="product-option">
-<label>Киім түрі:</label>
-<select class="product-select">
-<option>Зығыр көйлек</option>
+<label for="select-item-4">Киім түрі:</label>
+<select id="select-item-4" class="product-select">
+<option>Зығыр көйлек — 39 990 ₸</option>
 </select>
 </div>
 <div class="product-option">
-<label>Өлшемі:</label>
-<select class="product-select">
+<label for="select-size-4">Өлшемі:</label>
+<select id="select-size-4" class="product-select">
 <option>S (42)</option>
 <option>M (44)</option>
 <option>L (46)</option>
 </select>
 </div>
-<button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">Себетке қосу</button>
+<button type="button" class="add-to-cart-btn">Себетке қосу</button>
 </article>
 
+<!-- 5-ОБРАЗ -->
 <article class="product-card">
 <h3>5-ОБРАЗ</h3>
 <img src="images/togyz(5).png" alt="5-образ">
 <p class="price-amount">26 990 ₸</p>
 <div class="product-option">
-<label>Киім түрі:</label>
-<select class="product-select">
-<option>Костюм-комплект</option>
+<label for="select-item-5">Киім түрі:</label>
+<select id="select-item-5" class="product-select">
+<option>Костюм-комплект — 26 990 ₸</option>
 </select>
 </div>
 <div class="product-option">
-<label>Өлшемі:</label>
-<select class="product-select">
+<label for="select-size-5">Өлшемі:</label>
+<select id="select-size-5" class="product-select">
 <option>S (42)</option>
 <option>M (44)</option>
 <option>L (46)</option>
 </select>
 </div>
-<button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">Себетке қосу</button>
+<button type="button" class="add-to-cart-btn">Себетке қосу</button>
 </article>
 
+<!-- 6-ОБРАЗ -->
 <article class="product-card">
 <h3>6-ОБРАЗ</h3>
 <img src="images/togyz(6).png" alt="6-образ">
 <p class="price-amount">31 980 ₸</p>
 <div class="product-option">
-<label>Киім түрі:</label>
-<select class="product-select">
-<option>Толық образ (Комплект)</option>
-<option>Тор кофта</option>
-<option>Белдемше</option>
+<label for="select-item-6">Киім түрі:</label>
+<select id="select-item-6" class="product-select">
+<option>Толық образ (Комплект) — 31 980 ₸</option>
+<option>Тор кофта — 11 990 ₸</option>
+<option>Белдемше — 19 990 ₸</option>
 </select>
 </div>
 <div class="product-option">
-<label>Өлшемі:</label>
-<select class="product-select">
+<label for="select-size-6">Өлшемі:</label>
+<select id="select-size-6" class="product-select">
 <option>S (42)</option>
 <option>M (44)</option>
 <option>L (46)</option>
 </select>
 </div>
-<button class="add-to-cart-btn" onclick="alert('Тауар себетке қосылды!')">Себетке қосу</button>
+<button type="button" class="add-to-cart-btn">Себетке қосу</button>
 </article>
 
 </div>
 </section>
 
+<!-- БАҒАЛАР КЕСТЕСІ -->
 <section class="price-section">
 <h2>ӨНІМДЕРДІҢ БАҒАЛАРЫ</h2>
 <table class="price-table">
@@ -185,7 +197,7 @@
 </tr>
 </thead>
 <tbody>
-<tr><td><span class="price-badge">1-образ</span></td><td>Ұзартылған жейде</td><td class="price-amount text-right">36 990 ₸</td></tr>
+<tr><td><span class="price-badge">1-образ</span></td><td>Ұзартылған жейде</td><td class="price-amount text-right">23 000 ₸</td></tr>
 <tr><td><span class="price-badge">1-образ</span></td><td>Джинсы</td><td class="price-amount text-right">13 990 ₸</td></tr>
 <tr><td><span class="price-badge">2-образ</span></td><td>Блузка</td><td class="price-amount text-right">16 990 ₸</td></tr>
 <tr><td><span class="price-badge">2-образ</span></td><td>Аладдин шалбар</td><td class="price-amount text-right">13 990 ₸</td></tr>
@@ -200,6 +212,7 @@
 </table>
 </section>
 
+<!-- КИІМ САНАТТАРЫ -->
 <section class="category-section">
 <h2>КИІМ САНАТТАРЫ</h2>
 <ul class="categories-container">
@@ -211,8 +224,51 @@
 </ul>
 </section>
 </main>
+
 <footer>
 <p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
 </footer>
+
+<!-- МОДАЛЬДЫ ТЕРЕЗЕЛЕР (PURE CSS / NO JAVASCRIPT) -->
+<div id="login-modal" class="modal-overlay">
+  <div class="modal-content">
+    <a href="#" class="close-btn">&times;</a>
+    <h3>Жүйеге кіру</h3>
+    <form class="auth-form">
+      <div class="form-group">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label for="login-pass">Құпия сөз:</label>
+        <input type="password" id="login-pass" required>
+      </div>
+      <button type="submit" class="submit-btn">Кіру</button>
+    </form>
+  </div>
+</div>
+
+<div id="signup-modal" class="modal-overlay">
+  <div class="modal-content">
+    <a href="#" class="close-btn">&times;</a>
+    <h3>Тіркелу</h3>
+    <form class="auth-form">
+      <div class="form-group">
+        <label for="reg-name">Аты-жөні:</label>
+        <input type="text" id="reg-name" required>
+      </div>
+      <div class="form-group">
+        <label for="reg-email">Email:</label>
+        <input type="email" id="reg-email" required>
+      </div>
+      <div class="form-group">
+        <label for="reg-pass">Құпия сөз:</label>
+        <input type="password" id="reg-pass" required>
+      </div>
+      <button type="submit" class="submit-btn">Тіркелу</button>
+    </form>
+  </div>
+</div>
+
 </body>
 </html>

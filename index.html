@@ -14,8 +14,8 @@
 <h1><a href="index.html">TOGYZ BRAND</a></h1>
 </div>
 <div class="user-actions">
-<button onclick="openModal('login-modal')" class="auth-btn">Кіру</button>
-<button onclick="openModal('signup-modal')" class="auth-btn signup-btn">Тіркелу</button>
+  <a href="#login-modal" class="auth-btn">Кіру</a>
+  <a href="#signup-modal" class="auth-btn signup-btn">Тіркелу</a>
 </div>
 </div>
 </header>
@@ -55,18 +55,72 @@
 <p class="review-author">- Тоғыз брендінің негізін қалаушы <span>(2025 жыл)</span></p>
 </div>
 </section>
-<section id="contacts">
-<h2>Мекенжайымыз мен Байланыс</h2>
-<div class="review-card text-center">
-<p><strong>Мекенжайлары:</strong> Астана қ., Қабанбай Батыр 49А / Әлихан Бөкейхан 16/1</p>
-<p><strong>Жұмыс уақыты:</strong> Күнделікті 11:00 - 20:30</p>
-<p><strong>Телефон:</strong> <a href="tel:+77074634110" class="contact-link">+7 (707) 463-41-10</a></p>
-<p><strong>Email:</strong> <a href="mailto:info@togyzstore.kz" class="contact-link">info@togyzstore.kz</a></p>
-</div>
+<section class="contact-section">
+  <h2>МЕКЕНЖАЙЫМЫЗ МЕН БАЙЛАНЫС</h2>
+  <div class="contact-card">
+    <p><strong>Мекенжайлары:</strong></p>
+    <p>
+      • 1-филиал: Астана қ., Қабанбай Батыр 49А 
+      (<a href="https://2gis.kz/astana/geo/70000001114635110" target="_blank" rel="noopener noreferrer">2GIS картасынан қарау</a>)
+    </p>
+    <p>
+      • 2-филиал: Астана қ., Әлихан Бөкейхан 16/1 
+      (<a href="https://2gis.kz/astana/geo/70000001113373579" target="_blank" rel="noopener noreferrer">2GIS картасынан қарау</a>)
+    </p>
+    
+    <p style="margin-top: 15px;"><strong>Жұмыс уақыты:</strong> Күнделікті 11:00 - 20:30</p>
+    
+    <p><strong>Телефон:</strong> <a href="tel:+77019992989">+7 (701) 999-29-89</a></p>
+    
+    <p><strong>Email:</strong> <a href="mailto:info@togyzstore.kz">info@togyzstore.kz</a></p>
+    
+    <p>
+      <strong>Instagram:</strong> 
+      <a href="https://www.instagram.com/togyz_kz?stkn=aGNscjdhZm5xNGxv" target="_blank" rel="noopener noreferrer">@togyz_kz</a>
+    </p>
+  </div>
 </section>
 </main>
 <footer>
 <p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
 </footer>
+<div id="login-modal" class="modal-overlay">
+  <div class="modal-content">
+    <a href="#" class="close-btn">&times;</a>
+    <h3>Жүйеге кіру</h3>
+    <form class="auth-form">
+      <div class="form-group">
+        <label for="login-email">Email:</label>
+        <input type="email" id="login-email" required>
+      </div>
+      <div class="form-group">
+        <label for="login-pass">Құпия сөз:</label>
+        <input type="password" id="login-pass" required>
+      </div>
+      <button type="submit" class="submit-btn">Кіру</button>
+    </form>
+  </div>
+</div>
+<div id="signup-modal" class="modal-overlay">
+  <div class="modal-content">
+    <a href="#" class="close-btn">&times;</a>
+    <h3>Тіркелу</h3>
+    <form class="auth-form">
+      <div class="form-group">
+        <label for="reg-name">Аты-жөні:</label>
+        <input type="text" id="reg-name" required>
+      </div>
+      <div class="form-group">
+        <label for="reg-email">Email:</label>
+        <input type="email" id="reg-email" required>
+      </div>
+      <div class="form-group">
+        <label for="reg-pass">Құпия сөз:</label>
+        <input type="password" id="reg-pass" required>
+      </div>
+      <button type="submit" class="submit-btn">Тіркелу</button>
+    </form>
+  </div>
+</div>
 </body>
 </html>
