@@ -1,106 +1,389 @@
 <!DOCTYPE html>
 <html lang="kk">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Себет — TOGYZ BRAND</title>
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/dariya.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Себет — TOGYZ BRAND</title>
+
+    <!-- Bootstrap 5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/dariya.css">
 </head>
+
 <body>
-<header class="main-header">
-<div class="header-top-bar">
-<div class="brand-header">
-<h1><a href="index.html">TOGYZ BRAND</a></h1>
-</div>
-<div class="user-actions">
-  <a href="#login-modal" class="auth-btn">Кіру</a>
-  <a href="#signup-modal" class="auth-btn signup-btn">Тіркелу</a>
-</div>
-</div>
-</header>
-<nav>
-<ul class="nav-list">
-<li><a href="index.html">БАСТЫ БЕТ</a></li>
-<li><a href="catalog.html">КАТАЛОГ</a></li>
-<li><a href="size-guide.html">ӨЛШЕМДЕР КЕСТЕСІ</a></li>
-<li><a href="order.html">ТАПСЫРЫС БЕРУ</a></li>
-<li><a href="reviews.html">ПІКІРЛЕР</a></li>
-<li><a href="cart.html" class="active">СЕБЕТ 🛒</a></li>
-</ul>
+
+
+<nav class="navbar navbar-expand-lg bg-light border-bottom shadow-sm">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            TOGYZ BRAND
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Навигацияны ашу">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav mx-auto text-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        БАСТЫ БЕТ
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.html">
+                        КАТАЛОГ
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="size-guide.html">
+                        ӨЛШЕМДЕР КЕСТЕСІ
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="order.html">
+                        ТАПСЫРЫС БЕРУ
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="reviews.html">
+                        ПІКІРЛЕР
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       aria-current="page"
+                       href="cart.html">
+                        СЕБЕТ 🛒
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0">
+
+                <a href="#login-modal"
+                   class="btn btn-outline-dark btn-sm">
+                    Кіру
+                </a>
+
+                <a href="#signup-modal"
+                   class="btn btn-dark btn-sm">
+                    Тіркелу
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </nav>
-<main class="page-container-wide">
-<h2>СІЗДІҢ СЕБЕТІҢІЗ</h2>
 
-<table class="price-table">
-  <thead>
-    <tr>
-      <th>Тауар</th>
-      <th>Өлшемі</th>
-      <th>Түсі</th>
-      <th>Бағасы</th>
-      <th>Жою</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>1-ОБРАЗ (Толық комплект)</strong></td>
-      <td>M (44)</td>
-      <td>Қара</td>
-      <td class="price-amount">36 990 ₸</td>
-      <td class="text-center">
-        <button class="remove-btn" onclick="this.closest('tr').remove(); alert('Тауар себеттен өшірілді!');">X</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
-<div class="cart-summary-box">
-<p class="total-price-text"><strong>Барлығы: 36 990 ₸</strong></p>
-<a href="order.html" class="checkout-btn">Тапсырысты рәсімдеу →</a>
-</div>
+
+
+<main class="container py-5">
+
+    <h1 class="display-6 text-center mb-3">
+        СІЗДІҢ СЕБЕТІҢІЗ
+    </h1>
+
+    <p class="lead text-center text-body-secondary mb-5">
+        Таңдалған тауарларыңызды тексеріңіз
+    </p>
+
+
+
+    <section class="mb-4">
+
+        <div class="table-responsive shadow-sm">
+
+            <table class="table table-bordered table-striped align-middle mb-0">
+
+                <thead>
+
+                    <tr>
+                        <th>Тауар</th>
+                        <th>Өлшемі</th>
+                        <th>Түсі</th>
+                        <th class="text-end">Бағасы</th>
+                        <th class="text-center">Жою</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                1-ОБРАЗ (Толық комплект)
+                            </strong>
+                        </td>
+
+                        <td>
+                            <span class="badge text-bg-light border">
+                                M (44)
+                            </span>
+                        </td>
+
+                        <td>
+                            Қара
+                        </td>
+
+                        <td class="fw-bold text-end">
+                            36 990 ₸
+                        </td>
+
+                        <td class="text-center">
+
+                            <button type="button"
+                                    class="btn btn-outline-danger btn-sm"
+                                    aria-label="Тауарды жою">
+                                X
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <section>
+
+        <div class="row justify-content-end">
+
+            <div class="col-12 col-md-7 col-lg-5">
+
+                <div class="card shadow-sm border">
+
+                    <div class="card-body p-4">
+
+                        <h2 class="h4 mb-4">
+                            Тапсырыс қорытындысы
+                        </h2>
+
+
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+
+                            <span>
+                                Тауар саны:
+                            </span>
+
+                            <span class="badge text-bg-dark">
+                                1
+                            </span>
+
+                        </div>
+
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+
+                            <span class="fw-bold">
+                                Барлығы:
+                            </span>
+
+                            <span class="fw-bold fs-5 price-amount">
+                                36 990 ₸
+                            </span>
+
+                        </div>
+
+
+                        <div class="d-grid gap-2">
+
+                            <a href="order.html"
+                               class="btn btn-dark btn-lg">
+                                Тапсырысты рәсімдеу →
+                            </a>
+
+                            <a href="catalog.html"
+                               class="btn btn-outline-dark">
+                                Сатып алуды жалғастыру
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="mt-5">
+
+        <div class="alert alert-light border shadow-sm mb-0"
+             role="alert">
+
+            <h2 class="h5">
+                Назар аударыңыз
+            </h2>
+
+            <p class="mb-0">
+                Тапсырысты рәсімдемес бұрын тауардың өлшемі,
+                түсі және бағасын тексеріңіз.
+            </p>
+
+        </div>
+
+    </section>
+
 </main>
-<footer>
-<p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
+
+<footer class="container-fluid border-top text-center py-4 mt-5">
+
+    <p class="small text-body-secondary mb-0">
+        &copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.
+    </p>
+
 </footer>
 
+
 <div id="login-modal" class="modal-overlay">
-  <div class="modal-content">
-    <a href="#" class="close-btn">&times;</a>
-    <h3>Жүйеге кіру</h3>
-    <form class="auth-form">
-      <div class="form-group">
-        <label for="login-email">Email:</label>
-        <input type="email" id="login-email" required>
-      </div>
-      <div class="form-group">
-        <label for="login-pass">Құпия сөз:</label>
-        <input type="password" id="login-pass" required>
-      </div>
-      <button type="submit" class="submit-btn">Кіру</button>
-    </form>
-  </div>
+
+    <div class="modal-content">
+
+        <a href="#" class="close-btn">&times;</a>
+
+        <h3>Жүйеге кіру</h3>
+
+        <form class="auth-form">
+
+            <div class="form-group">
+
+                <label for="login-email">
+                    Email:
+                </label>
+
+                <input type="email"
+                       id="login-email"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="login-pass">
+                    Құпия сөз:
+                </label>
+
+                <input type="password"
+                       id="login-pass"
+                       required>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-dark w-100 mt-2">
+                Кіру
+            </button>
+
+        </form>
+
+    </div>
+
 </div>
+
+
+
 <div id="signup-modal" class="modal-overlay">
-  <div class="modal-content">
-    <a href="#" class="close-btn">&times;</a>
-    <h3>Тіркелу</h3>
-    <form class="auth-form">
-      <div class="form-group">
-        <label for="reg-name">Аты-жөні:</label>
-        <input type="text" id="reg-name" required>
-      </div>
-      <div class="form-group">
-        <label for="reg-email">Email:</label>
-        <input type="email" id="reg-email" required>
-      </div>
-      <div class="form-group">
-        <label for="reg-pass">Құпия сөз:</label>
-        <input type="password" id="reg-pass" required>
-      </div>
-      <button type="submit" class="submit-btn">Тіркелу</button>
-    </form>
-  </div>
+
+    <div class="modal-content">
+
+        <a href="#" class="close-btn">&times;</a>
+
+        <h3>Тіркелу</h3>
+
+        <form class="auth-form">
+
+            <div class="form-group">
+
+                <label for="reg-name">
+                    Аты-жөні:
+                </label>
+
+                <input type="text"
+                       id="reg-name"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="reg-email">
+                    Email:
+                </label>
+
+                <input type="email"
+                       id="reg-email"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="reg-pass">
+                    Құпия сөз:
+                </label>
+
+                <input type="password"
+                       id="reg-pass"
+                       required>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-dark w-100 mt-2">
+                Тіркелу
+            </button>
+
+        </form>
+
+    </div>
+
 </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

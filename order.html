@@ -1,141 +1,575 @@
 <!DOCTYPE html>
 <html lang="kk">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Тапсырыс беру — TOGYZ BRAND</title>
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/gaukhar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Тапсырыс беру — TOGYZ BRAND</title>
+
+    <!-- Bootstrap 5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/gaukhar.css">
 </head>
+
 <body>
-<header class="main-header">
-<div class="header-top-bar">
-<div class="brand-header">
-<h1><a href="index.html">TOGYZ BRAND</a></h1>
-</div>
-<div class="user-actions">
-  <a href="#login-modal" class="auth-btn">Кіру</a>
-  <a href="#signup-modal" class="auth-btn signup-btn">Тіркелу</a>
-</div>
-</div>
-</header>
-<nav>
-<ul class="nav-list">
-<li><a href="index.html">БАСТЫ БЕТ</a></li>
-<li><a href="catalog.html">КАТАЛОГ</a></li>
-<li><a href="size-guide.html">ӨЛШЕМДЕР КЕСТЕСІ</a></li>
-<li><a href="order.html" class="active">ТАПСЫРЫС БЕРУ</a></li>
-<li><a href="reviews.html">ПІКІРЛЕР</a></li>
-<li><a href="cart.html">СЕБЕТ 🛒</a></li>
-</ul>
+
+
+<nav class="navbar navbar-expand-lg bg-light border-bottom shadow-sm">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+            TOGYZ BRAND
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar"
+                aria-expanded="false"
+                aria-label="Навигацияны ашу">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <ul class="navbar-nav mx-auto text-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        БАСТЫ БЕТ
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.html">
+                        КАТАЛОГ
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="size-guide.html">
+                        ӨЛШЕМДЕР КЕСТЕСІ
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active"
+                       aria-current="page"
+                       href="order.html">
+                        ТАПСЫРЫС БЕРУ
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="reviews.html">
+                        ПІКІРЛЕР
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">
+                        СЕБЕТ 🛒
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0">
+
+                <a href="#login-modal"
+                   class="btn btn-outline-dark btn-sm">
+                    Кіру
+                </a>
+
+                <a href="#signup-modal"
+                   class="btn btn-dark btn-sm">
+                    Тіркелу
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </nav>
-<main class="page-container">
-<h2>ТАПСЫРЫС БЕРУ</h2>
 
-<!-- DEMO: Жалғыз inline style атрибуты (Cascade demo үшін) -->
-<section class="form-section" style="border-top: 4px solid #5C061C;">
-<form onsubmit="alert('Тапсырысыңыз қабылданды!'); return false;" class="custom-form">
-<div class="form-group">
-<label for="fullname">Аты-жөніңіз:</label>
-<input type="text" id="fullname" placeholder="Толық аты-жөніңізді енгізіңіз" required>
-</div>
+<main class="container py-5">
 
-<div class="form-group">
-<label for="phone">Телефон нөміріңіз:</label>
-<input type="tel" id="phone" placeholder="+7 (700) 000-00-00" required>
-</div>
+    <section>
 
-<!-- Жеткізу аймағы: Қалалар мен облыстар тізімі -->
-<div class="form-group">
-<label for="region">Жеткізу аймағы (Қала / Облыс):</label>
-<select id="region" required class="form-select">
-<option value="">Аймақты таңдаңыз...</option>
-<optgroup label="Республикалық маңызы бар қалалар">
-<option value="astana">Астана қаласы</option>
-<option value="almaty">Алматы қаласы</option>
-<option value="shymkent">Шымкент қаласы</option>
-</optgroup>
-<optgroup label="Облыстар">
-<option value="zko">Батыс Қазақстан облысы (Орал)</option>
-<option value="akmola">Ақмола облысы (Көкшетау)</option>
-<option value="aktobe">Ақтөбе облысы</option>
-<option value="almaty-obl">Алматы облысы (Қонаев)</option>
-<option value="atyrau">Атырау облысы</option>
-<option value="zhabyl">Жамбыл облысы (Тараз)</option>
-<option value="zhetysu">Жетісу облысы (Талдықорған)</option>
-<option value="karaganda">Қарағанды облысы</option>
-<option value="kostanay">Қостанай облысы</option>
-<option value="kyzylorda">Қызылорда облысы</option>
-<option value="mangystau">Маңғыстау облысы (Ақтау)</option>
-<option value="pavlodar">Павлодар облысы</option>
-<option value="sko">Солтүстік Қазақстан облысы (Петропавл)</option>
-<option value="turkestan">Түркістан облысы</option>
-<option value="vko">Шығыс Қазақстан облысы (Өскемен)</option>
-<option value="abai">Абай облысы (Семей)</option>
-<option value="ulytau">Ұлытау облысы (Жезқазған)</option>
-</optgroup>
-</select>
-</div>
+        <h1 class="display-6 text-center mb-3">
+            ТАПСЫРЫС БЕРУ
+        </h1>
 
-<div class="form-group">
-<label for="address">Жеткізу мекенжайы:</label>
-<input type="text" id="address" placeholder="Көше, үй, пәтер" required>
-</div>
+        <p class="lead text-center text-body-secondary mb-5">
+            Тапсырыс беру үшін төмендегі форманы толтырыңыз
+        </p>
 
-<div class="form-group">
-<label for="payment">Төлем түрі:</label>
-<select id="payment" required class="form-select">
-<option value="">Төлем әдісін таңдаңыз...</option>
-<option value="kaspi-qr">Kaspi QR / Red / Плюс</option>
-<option value="card">Банк картасымен онлайн төлеу</option>
-<option value="cash">Жеткізілгенде қолма-қол төлеу</option>
-</select>
-</div>
 
-<button type="submit" class="submit-btn">Тапсырысты растау</button>
-</form>
-</section>
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-md-10 col-lg-8">
+
+                <div class="card shadow-sm border">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <form>
+
+
+                          
+                            <div class="mb-3">
+
+                                <label for="fullname"
+                                       class="form-label fw-bold">
+                                    Аты-жөніңіз:
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       id="fullname"
+                                       placeholder="Толық аты-жөніңізді енгізіңіз"
+                                       required>
+
+                            </div>
+
+
+                      
+                            <div class="mb-3">
+
+                                <label for="phone"
+                                       class="form-label fw-bold">
+                                    Телефон нөміріңіз:
+                                </label>
+
+                                <input type="tel"
+                                       class="form-control"
+                                       id="phone"
+                                       placeholder="+7 (700) 000-00-00"
+                                       required>
+
+                            </div>
+
+
+                           
+                            <div class="mb-3">
+
+                                <label for="region"
+                                       class="form-label fw-bold">
+                                    Жеткізу аймағы (Қала / Облыс):
+                                </label>
+
+                                <select id="region"
+                                        class="form-select"
+                                        required>
+
+                                    <option value="">
+                                        Аймақты таңдаңыз...
+                                    </option>
+
+                                    <optgroup label="Республикалық маңызы бар қалалар">
+
+                                        <option value="astana">
+                                            Астана қаласы
+                                        </option>
+
+                                        <option value="almaty">
+                                            Алматы қаласы
+                                        </option>
+
+                                        <option value="shymkent">
+                                            Шымкент қаласы
+                                        </option>
+
+                                    </optgroup>
+
+
+                                    <optgroup label="Облыстар">
+
+                                        <option value="zko">
+                                            Батыс Қазақстан облысы (Орал)
+                                        </option>
+
+                                        <option value="akmola">
+                                            Ақмола облысы (Көкшетау)
+                                        </option>
+
+                                        <option value="aktobe">
+                                            Ақтөбе облысы
+                                        </option>
+
+                                        <option value="almaty-obl">
+                                            Алматы облысы (Қонаев)
+                                        </option>
+
+                                        <option value="atyrau">
+                                            Атырау облысы
+                                        </option>
+
+                                        <option value="zhabyl">
+                                            Жамбыл облысы (Тараз)
+                                        </option>
+
+                                        <option value="zhetysu">
+                                            Жетісу облысы (Талдықорған)
+                                        </option>
+
+                                        <option value="karaganda">
+                                            Қарағанды облысы
+                                        </option>
+
+                                        <option value="kostanay">
+                                            Қостанай облысы
+                                        </option>
+
+                                        <option value="kyzylorda">
+                                            Қызылорда облысы
+                                        </option>
+
+                                        <option value="mangystau">
+                                            Маңғыстау облысы (Ақтау)
+                                        </option>
+
+                                        <option value="pavlodar">
+                                            Павлодар облысы
+                                        </option>
+
+                                        <option value="sko">
+                                            Солтүстік Қазақстан облысы (Петропавл)
+                                        </option>
+
+                                        <option value="turkestan">
+                                            Түркістан облысы
+                                        </option>
+
+                                        <option value="vko">
+                                            Шығыс Қазақстан облысы (Өскемен)
+                                        </option>
+
+                                        <option value="abai">
+                                            Абай облысы (Семей)
+                                        </option>
+
+                                        <option value="ulytau">
+                                            Ұлытау облысы (Жезқазған)
+                                        </option>
+
+                                    </optgroup>
+
+                                </select>
+
+                            </div>
+
+
+                    
+                            <div class="mb-3">
+
+                                <label for="address"
+                                       class="form-label fw-bold">
+                                    Жеткізу мекенжайы:
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       id="address"
+                                       placeholder="Көше, үй, пәтер"
+                                       required>
+
+                            </div>
+
+
+                        
+                            <div class="mb-4">
+
+                                <label for="payment"
+                                       class="form-label fw-bold">
+                                    Төлем түрі:
+                                </label>
+
+                                <select id="payment"
+                                        class="form-select"
+                                        required>
+
+                                    <option value="">
+                                        Төлем әдісін таңдаңыз...
+                                    </option>
+
+                                    <option value="kaspi-qr">
+                                        Kaspi QR / Red / Плюс
+                                    </option>
+
+                                    <option value="card">
+                                        Банк картасымен онлайн төлеу
+                                    </option>
+
+                                    <option value="cash">
+                                        Жеткізілгенде қолма-қол төлеу
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                          
+                            <div class="d-grid gap-2">
+
+                                <button type="submit"
+                                        class="btn btn-dark btn-lg">
+                                    Тапсырысты растау
+                                </button>
+
+                                <a href="catalog.html"
+                                   class="btn btn-outline-dark">
+                                    Каталогқа оралу
+                                </a>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="mt-5">
+
+        <h2 class="text-center mb-4">
+            Тапсырыс беру тәртібі
+        </h2>
+
+        <div class="row g-3">
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div class="card h-100 border shadow-sm">
+
+                    <div class="card-body text-center">
+
+                        <span class="badge text-bg-dark rounded-pill mb-3">
+                            1
+                        </span>
+
+                        <p class="mb-0">
+                            Ұнаған киімді каталогтан таңдаңыз.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div class="card h-100 border shadow-sm">
+
+                    <div class="card-body text-center">
+
+                        <span class="badge text-bg-dark rounded-pill mb-3">
+                            2
+                        </span>
+
+                        <p class="mb-0">
+                            Өзіңізге қажетті өлшем мен түсті көрсетіңіз.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div class="card h-100 border shadow-sm">
+
+                    <div class="card-body text-center">
+
+                        <span class="badge text-bg-dark rounded-pill mb-3">
+                            3
+                        </span>
+
+                        <p class="mb-0">
+                            Бізбен байланысып, тапсырысыңызды растаңыз.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div class="card h-100 border shadow-sm">
+
+                    <div class="card-body text-center">
+
+                        <span class="badge text-bg-dark rounded-pill mb-3">
+                            4
+                        </span>
+
+                        <p class="mb-0">
+                            Төлем жасалғаннан кейін тапсырыс жеткізуге жіберіледі.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="text-center mt-5">
+
+        <button type="button"
+                class="btn btn-secondary btn-sm"
+                disabled>
+            Тапсырыс тарихы әзірге қолжетімсіз
+        </button>
+
+    </div>
+
 </main>
-<footer>
-    <div id="login-modal" class="modal-overlay">
-  <div class="modal-content">
-    <a href="#" class="close-btn">&times;</a>
-    <h3>Жүйеге кіру</h3>
-    <form class="auth-form">
-      <div class="form-group">
-        <label for="login-email">Email:</label>
-        <input type="email" id="login-email" required>
-      </div>
-      <div class="form-group">
-        <label for="login-pass">Құпия сөз:</label>
-        <input type="password" id="login-pass" required>
-      </div>
-      <button type="submit" class="submit-btn">Кіру</button>
-    </form>
-  </div>
-</div>
-<div id="signup-modal" class="modal-overlay">
-  <div class="modal-content">
-    <a href="#" class="close-btn">&times;</a>
-    <h3>Тіркелу</h3>
-    <form class="auth-form">
-      <div class="form-group">
-        <label for="reg-name">Аты-жөні:</label>
-        <input type="text" id="reg-name" required>
-      </div>
-      <div class="form-group">
-        <label for="reg-email">Email:</label>
-        <input type="email" id="reg-email" required>
-      </div>
-      <div class="form-group">
-        <label for="reg-pass">Құпия сөз:</label>
-        <input type="password" id="reg-pass" required>
-      </div>
-      <button type="submit" class="submit-btn">Тіркелу</button>
-    </form>
-  </div>
-</div>
-<p>&copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.</p>
+
+
+
+<footer class="container-fluid border-top text-center py-4 mt-5">
+
+    <p class="small text-body-secondary mb-0">
+        &copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.
+    </p>
+
 </footer>
+
+
+<div id="login-modal" class="modal-overlay">
+
+    <div class="modal-content">
+
+        <a href="#" class="close-btn">&times;</a>
+
+        <h3>Жүйеге кіру</h3>
+
+        <form class="auth-form">
+
+            <div class="form-group">
+
+                <label for="login-email">
+                    Email:
+                </label>
+
+                <input type="email"
+                       id="login-email"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="login-pass">
+                    Құпия сөз:
+                </label>
+
+                <input type="password"
+                       id="login-pass"
+                       required>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-dark w-100 mt-2">
+                Кіру
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="signup-modal" class="modal-overlay">
+
+    <div class="modal-content">
+
+        <a href="#" class="close-btn">&times;</a>
+
+        <h3>Тіркелу</h3>
+
+        <form class="auth-form">
+
+            <div class="form-group">
+
+                <label for="reg-name">
+                    Аты-жөні:
+                </label>
+
+                <input type="text"
+                       id="reg-name"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="reg-email">
+                    Email:
+                </label>
+
+                <input type="email"
+                       id="reg-email"
+                       required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="reg-pass">
+                    Құпия сөз:
+                </label>
+
+                <input type="password"
+                       id="reg-pass"
+                       required>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-dark w-100 mt-2">
+                Тіркелу
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

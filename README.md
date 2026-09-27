@@ -1,25 +1,107 @@
-# 🛍️ Togyz Brand — Web Application
+# 🛍️ TOGYZ BRAND — Bootstrap Responsive Website
 
-This is the official web application for **Togyz Brand**, an online boutique for modern fashion and accessories. The website features an interactive product catalog, customizable outfit combinations, customer reviews, a shopping cart, and a streamlined order placement form.
+TOGYZ BRAND is a responsive fashion boutique website created with HTML5, Bootstrap 5.3.8, and a small amount of custom CSS.
+
+This version of the project was updated for Assignment 3 to use Bootstrap for the main layout, responsive grid, navigation, forms, buttons, tables, cards, and utility classes.
 
 ---
 
 ## 🚀 Features
 
-* **Responsive Product Catalog:** Uniform 3-column, 2-row grid display across desktop and mobile devices.
-* **Interactive Modals:** User authentication pop-ups (Log In / Sign Up).
-* **Customer Reviews System:** Interactive form allowing users to submit feedback dynamically.
-* **Kazakhstan Regional Delivery Form:** Complete selection of all 17 regions, 3 major cities, and key district centers for accurate order shipping.
-* **Custom Outfit Selection:** Item-specific options allowing customers to select exact pieces from complete outfit sets along with sizes.
-* **Shopping Cart (`cart.html`):** Clean and minimal shopping cart page for order preview.
+- Responsive Bootstrap navigation bar with a collapsible mobile menu
+- Responsive product catalog
+- Product cards with size and color selection
+- Size guide with a responsive Bootstrap table
+- Order form with Kazakhstan regions and cities
+- Customer reviews page
+- Shopping cart and order summary
+- Responsive layouts for phone, tablet, and desktop
+- Login and registration forms
+- Bootstrap cards, badges, alerts, tables, buttons, and forms
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies
 
-* **HTML5:** Semantic markup, dynamic `<select>` groups, forms, and custom modal layouts.
-* **CSS3:** Custom styles utilizing CSS Grid, Flexbox, custom color palettes, and interactive transitions.
-* **JavaScript:** Modal window controls and client-side interactions.
+- **HTML5** — semantic page structure, forms, tables, and content
+- **Bootstrap 5.3.8** — responsive grid, navbar, cards, buttons, forms, tables, utilities, badges, and alerts
+- **CSS3** — brand colors, fonts, image corrections, and small visual adjustments
+
+Bootstrap is responsible for the main layout and responsive behavior, while custom CSS is used only as a correction layer for the TOGYZ BRAND visual identity.
+
+---
+
+## 📱 Responsive Design
+
+The website is designed for different screen sizes using Bootstrap breakpoints.
+
+Examples of responsive classes used in the project:
+
+- `col-12`
+- `col-md-6`
+- `col-lg-4`
+- `navbar-expand-lg`
+- `table-responsive`
+- `text-center`
+- `text-md-start`
+- `d-flex`
+- `d-grid`
+- `flex-wrap`
+
+The navigation bar automatically collapses into a mobile toggler on smaller screens.
+
+---
+
+## 🧩 Bootstrap Components
+
+The project uses several Bootstrap components:
+
+- Navbar
+- Cards
+- Buttons
+- Forms
+- Responsive tables
+- Badges
+- Alerts
+
+Bootstrap utility classes are also used for spacing, borders, shadows, alignment, display, and flex behavior.
+
+---
+
+## 🎨 Custom CSS
+
+Custom CSS was reduced during the migration to Bootstrap.
+
+### `base.css`
+
+Contains:
+
+- TOGYZ BRAND colors
+- Typography
+- Navbar color corrections
+- Button color corrections
+- Basic brand-specific styling
+
+### `gaukhar.css`
+
+Contains small corrections for:
+
+- Store images
+- Form focus states
+- Contact elements
+
+### `dariya.css`
+
+Contains small corrections for:
+
+- Product images
+- Product card hover effects
+- Price colors
+- Form focus states
+
+Old custom layout rules were removed and replaced with Bootstrap classes where possible.
+
+See `css-cleanup.txt` for a list of removed CSS rules and their Bootstrap replacements.
 
 ---
 
@@ -28,14 +110,17 @@ This is the official web application for **Togyz Brand**, an online boutique for
 ```text
 togyz-website/
 ├── css/
-│   ├── base.css          # Base styles and color theme palette
-│   ├── dariya.css        # Layout grid, catalog options, and modal window styles
-│   └── gaukhar.css       # Forms, tables, cart layout, and regional delivery dropdowns
-├── images/               # Product lookbook, interior, and showcase media
-├── index.html            # Main home page with brand overview & locations
-├── catalog.html          # Product catalog with 6 outfit cards and price table
-├── size-guide.html       # Sizing chart and fitting guide
-├── order.html            # Order form with region & city selector
-├── reviews.html          # Customer reviews and feedback submission form
-├── cart.html             # Shopping cart page
-└── README.md             # Project documentation
+│   ├── base.css
+│   ├── dariya.css
+│   └── gaukhar.css
+│
+├── images/
+│
+├── index.html
+├── catalog.html
+├── size-guide.html
+├── order.html
+├── reviews.html
+├── cart.html
+├── css-cleanup.txt
+└── README.md

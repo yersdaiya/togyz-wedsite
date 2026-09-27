@@ -1,0 +1,41 @@
+TOGYZ BRAND - CSS CLEANUP
+
+1. Removed custom navigation flex layout
+   Replaced with:
+   navbar, navbar-expand-lg, navbar-nav, d-flex
+
+2. Removed .product-grid CSS Grid
+   Replaced with:
+   row, col-12, col-md-6, col-lg-4, g-4
+
+3. Removed custom page width and spacing
+   Replaced with:
+   container, container-fluid, py-5, mt-5, mb-5
+
+4. Removed custom product button styles
+   Replaced with:
+   btn, btn-dark, btn-outline-dark, btn-lg, btn-sm
+
+5. Removed custom form layout
+   Replaced with:
+   form-control, form-select, form-label, mb-3
+
+6. Removed custom price table styling
+   Replaced with:
+   table, table-bordered, table-striped,
+   table-responsive, align-middle
+
+7. Removed custom category flex layout
+   Replaced with:
+   d-flex, flex-wrap, justify-content-center, gap-2
+
+8. Removed custom review layout
+   Replaced with:
+   row, col-12, col-md-6, card, shadow-sm
+
+9. Removed custom cart summary layout
+   Replaced with:
+   card, d-grid, d-flex, justify-content-between
+
+10. Removed inline styles
+    Replaced with Bootstrap utility classes.
