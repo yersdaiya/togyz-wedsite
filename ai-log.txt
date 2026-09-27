@@ -1,0 +1,25 @@
+TOGYZ BRAND — AI USAGE LOG
+Assignment 3: Bootstrap Responsive Design
+
+AI tool used:
+ChatGPT
+
+Purpose:
+ChatGPT was used to help understand Bootstrap concepts and migration from custom CSS to Bootstrap.
+
+Questions / Topics:
+1. How to add Bootstrap 5 to an existing HTML project?
+2. How does Bootstrap container and container-fluid work?
+3. How to create a responsive Bootstrap navbar with a mobile toggler?
+4. How do Bootstrap row and col classes work?
+5. What do col-12, col-md-6 and col-lg-4 mean?
+6. How to make product cards responsive with Bootstrap Grid?
+7. How to create a responsive Bootstrap table?
+8. How to use Bootstrap form-control and form-select?
+9. How to use Bootstrap buttons and button size variants?
+10. How to use Bootstrap utility classes for spacing, borders, shadows and alignment?
+11. How does a nested Bootstrap grid work?
+12. How to reduce old custom CSS after migrating to Bootstrap?
+13. How to test the website at 375px, 768px and desktop width?
+
+AI output was reviewed and adapted to the existing TOGYZ BRAND project.
