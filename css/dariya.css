@@ -30,3 +30,21 @@
     color: #5C061C;
     font-weight: 600;
 }
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-active {
+  border: 2px solid #5C061C !important;
+  background-color: #F8EFE6 !important;
+}
+
+
+.has-error {
+  border-color: #dc3545 !important;
+}
+
+.has-success {
+  border-color: #198754 !important;
+}

@@ -1,107 +1,65 @@
-# 🛍️ TOGYZ BRAND — Bootstrap Responsive Website
+# 🛍️ TOGYZ BRAND — Bootstrap Responsive Website (Midterm Submission)
 
-TOGYZ BRAND is a responsive fashion boutique website created with HTML5, Bootstrap 5.3.8, and a small amount of custom CSS.
+**Developer:** Dariya Yersainova  
+**Repository:** https://github.com/yersdaiya/togyz-website.git  
 
-This version of the project was updated for Assignment 3 to use Bootstrap for the main layout, responsive grid, navigation, forms, buttons, tables, cards, and utility classes.
+TOGYZ BRAND is a responsive fashion boutique website built using HTML5, Bootstrap 5.3.2, and custom CSS correction layers. This version represents the **Midterm Freeze Stage**, where the complete site structure, responsive layout, and JavaScript readiness (hooks and state classes) are frozen and fully operational.
 
 ---
 
-## 🚀 Features
+## 🧭 Three User Journeys
 
-- Responsive Bootstrap navigation bar with a collapsible mobile menu
-- Responsive product catalog
-- Product cards with size and color selection
-- Size guide with a responsive Bootstrap table
-- Order form with Kazakhstan regions and cities
-- Customer reviews page
-- Shopping cart and order summary
-- Responsive layouts for phone, tablet, and desktop
-- Login and registration forms
-- Bootstrap cards, badges, alerts, tables, buttons, and forms
+### Journey 1: Product Browsing & Size Verification
+1. **Start:** User opens the homepage (`index.html`) to learn about the store, view physical store locations, and navigates to the Catalog via the main navbar (`catalog.html`).
+2. **Steps:** 
+   - Browses available autumn collections ("1-ОБРАЗ", "2-ОБРАЗ", etc.) and checks specific product pricing in the product table.
+   - Navigates to the Size Guide page (`size-guide.html`) to check body measurements (chest, waist, hips) and select their correct size.
+3. **End:** User determines their size using the responsive chart and returns smoothly to the catalog to choose an outfit.
+
+### Journey 2: Selecting Clothes & Placing an Order
+1. **Start:** User selects outfit details (e.g., size "S (42)") on `catalog.html` and clicks "Себетке қосу" (`#add-to-cart-btn-1`).
+2. **Steps:**
+   - Navigates to the Cart page (`cart.html`) to review the item list, quantity, and total price (`#cart-total-price`).
+   - Clicks "Тапсырысты рәсімдеу →" (`#checkout-btn`) to move to the Order page (`order.html`).
+   - Fills out the checkout form (`#order-checkout-form`) with full name, phone number, region, delivery address, and payment method.
+3. **End:** Clicks "Тапсырысты растау" (`#submit-order-btn`) and receives order submission feedback (`#order-success-message`).
+
+### Journey 3: Customer Feedback & Store Discovery
+1. **Start:** A returning customer or new visitor visits `reviews.html` to read store reviews or leave feedback.
+2. **Steps:**
+   - Reads customer reviews ("Айгерім", "Динара") in the recent reviews grid.
+   - Fills out the feedback form (`#add-review-form`) with their name and comment, clicking "Пікірді жіберу" (`#submit-review-btn`).
+   - Uses the footer or navbar links to check store contacts and 2GIS map links on the homepage.
+3. **End:** Successfully leaves a review (`#review-success-message`) and navigates through the brand's social links without dead links.
+
+---
+
+## 🛠️ JavaScript Preparedness (Freeze Stage)
+
+- **Unique IDs Assigned:** All forms (`#checkout-form`, `#order-checkout-form`, `#add-review-form`), inputs (`#fullname`, `#phone`, `#review-name`), buttons (`#submit-order-btn`, `#add-to-cart-btn-1`), and dynamic labels have lowercase, unique English IDs.
+- **Empty Containers:** Form feedback containers (`#order-confirmation`, `#order-success-message`, `#review-success-message`) and cart lists (`#cart-items-container`) are pre-structured with state-toggling readiness.
+- **State Classes in `css/dariya.css`:** Added utility state classes `.is-hidden`, `.is-active`, `.has-error`, `.has-success`, and `.is-selected` for future JS DOM manipulation.
+
+---
+
+## 🚀 Features & Components
+
+- Responsive Bootstrap navbar with a mobile toggler menu
+- Responsive product grid with aspect-ratio normalized store images (`ratio-4x3`, `object-fit: cover`)
+- Product cards with size and outfit variation selections
+- Interactive size guide with Bootstrap responsive tables
+- Kazakhstan region-selectable checkout order form
+- Customer review submission section
+- Shopping cart summary
+- Unified login and registration modal markup
 
 ---
 
 ## 🛠️ Technologies
 
-- **HTML5** — semantic page structure, forms, tables, and content
-- **Bootstrap 5.3.8** — responsive grid, navbar, cards, buttons, forms, tables, utilities, badges, and alerts
-- **CSS3** — brand colors, fonts, image corrections, and small visual adjustments
-
-Bootstrap is responsible for the main layout and responsive behavior, while custom CSS is used only as a correction layer for the TOGYZ BRAND visual identity.
-
----
-
-## 📱 Responsive Design
-
-The website is designed for different screen sizes using Bootstrap breakpoints.
-
-Examples of responsive classes used in the project:
-
-- `col-12`
-- `col-md-6`
-- `col-lg-4`
-- `navbar-expand-lg`
-- `table-responsive`
-- `text-center`
-- `text-md-start`
-- `d-flex`
-- `d-grid`
-- `flex-wrap`
-
-The navigation bar automatically collapses into a mobile toggler on smaller screens.
-
----
-
-## 🧩 Bootstrap Components
-
-The project uses several Bootstrap components:
-
-- Navbar
-- Cards
-- Buttons
-- Forms
-- Responsive tables
-- Badges
-- Alerts
-
-Bootstrap utility classes are also used for spacing, borders, shadows, alignment, display, and flex behavior.
-
----
-
-## 🎨 Custom CSS
-
-Custom CSS was reduced during the migration to Bootstrap.
-
-### `base.css`
-
-Contains:
-
-- TOGYZ BRAND colors
-- Typography
-- Navbar color corrections
-- Button color corrections
-- Basic brand-specific styling
-
-### `gaukhar.css`
-
-Contains small corrections for:
-
-- Store images
-- Form focus states
-- Contact elements
-
-### `dariya.css`
-
-Contains small corrections for:
-
-- Product images
-- Product card hover effects
-- Price colors
-- Form focus states
-
-Old custom layout rules were removed and replaced with Bootstrap classes where possible.
-
-See `css-cleanup.txt` for a list of removed CSS rules and their Bootstrap replacements.
+- **HTML5** — Semantic page structure, forms, tables, and modal components
+- **Bootstrap 5.3.2** — Responsive grid system, navbar, cards, buttons, forms, tables, badges, and alerts
+- **CSS3** — Visual identity corrections, custom color palettes, and layout adjustments (`base.css`, `dariya.css`)
 
 ---
 
@@ -113,14 +71,16 @@ togyz-website/
 │   ├── base.css
 │   ├── dariya.css
 │   └── gaukhar.css
-│
 ├── images/
-│
+│   ├── togyz.png
+│   ├── togyz16.jpg
+│   └── togyz(1).png ... togyz(6).png
 ├── index.html
 ├── catalog.html
 ├── size-guide.html
 ├── order.html
 ├── reviews.html
 ├── cart.html
+├── quality-pass.txt
 ├── css-cleanup.txt
 └── README.md

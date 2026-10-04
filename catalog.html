@@ -7,8 +7,8 @@
 
     <title>Togyz - Киім Каталогы</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <!-- Bootstrap 5.3.2 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/dariya.css">
@@ -16,10 +16,11 @@
 
 <body>
 
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg bg-light border-bottom shadow-sm">
     <div class="container">
 
-        <a class="navbar-brand fw-bold" href="index.html">
+        <a class="navbar-brand fw-bold" href="index.html" style="color: #5C061C;">
             TOGYZ BRAND
         </a>
 
@@ -44,7 +45,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active"
+                    <a class="nav-link active fw-bold"
                        aria-current="page"
                        href="catalog.html">
                         КАТАЛОГ
@@ -79,13 +80,11 @@
 
             <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0">
 
-                <a href="#login-modal"
-                   class="btn btn-outline-dark btn-sm">
+                <a href="#login-modal" id="nav-login-btn" class="btn btn-outline-dark btn-sm">
                     Кіру
                 </a>
 
-                <a href="#signup-modal"
-                   class="btn btn-dark btn-sm">
+                <a href="#signup-modal" id="nav-signup-btn" class="btn btn-dark btn-sm">
                     Тіркелу
                 </a>
 
@@ -96,12 +95,11 @@
 </nav>
 
 
-<main class="container py-5">
-
+<main class="container py-5" id="catalog-main-container">
 
     <section id="collection" class="mb-5">
 
-        <h1 class="display-6 text-center mb-2">
+        <h1 class="display-6 text-center mb-2" style="color: #5C061C;">
             КҮЗГІ ТОПТАМАСЫ
         </h1>
 
@@ -109,16 +107,17 @@
             Жаңа маусымға арналған сәнді образдар
         </p>
 
+        <!-- Empty alert container for dynamic JS message (e.g. Added to Cart notification) -->
+        <div id="catalog-toast-message" class="alert alert-success text-center d-none" role="alert">
+            Тауар себетке сәтті қосылды!
+        </div>
 
+        <div class="row g-4" id="product-grid-container">
 
-        <div class="row g-4">
+            <!-- 1-ОБРАЗ -->
+            <div class="col-12 col-md-6 col-lg-4" id="product-card-col-1">
 
-
-  
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <article class="card h-100 shadow-sm product-card">
+                <article class="card h-100 shadow-sm product-card" id="card-item-1">
 
                     <img src="images/togyz(1).png"
                          class="card-img-top img-fluid"
@@ -126,11 +125,11 @@
 
                     <div class="card-body d-flex flex-column">
 
-                        <h2 class="h4 card-title text-center">
+                        <h2 class="h4 card-title text-center" id="title-item-1">
                             1-ОБРАЗ
                         </h2>
 
-                        <p class="price-amount text-center fw-bold fs-5">
+                        <p class="price-amount text-center fw-bold fs-5" id="price-item-1" style="color: #5C061C;">
                             36 990 ₸
                         </p>
 
@@ -171,16 +170,17 @@
                             <select id="select-size-1"
                                     class="form-select">
 
-                                <option>S (42)</option>
-                                <option>M (44)</option>
-                                <option>L (46)</option>
-                                <option>XL (48)</option>
+                                <option value="S">S (42)</option>
+                                <option value="M">M (44)</option>
+                                <option value="L">L (46)</option>
+                                <option value="XL">XL (48)</option>
 
                             </select>
 
                         </div>
 
                         <button type="button"
+                                id="add-to-cart-btn-1"
                                 class="btn btn-dark w-100 mt-auto">
                             Себетке қосу
                         </button>
@@ -191,10 +191,10 @@
 
             </div>
 
+            <!-- 2-ОБРАЗ -->
+            <div class="col-12 col-md-6 col-lg-4" id="product-card-col-2">
 
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <article class="card h-100 shadow-sm product-card">
+                <article class="card h-100 shadow-sm product-card" id="card-item-2">
 
                     <img src="images/togyz(2).png"
                          class="card-img-top img-fluid"
@@ -202,11 +202,11 @@
 
                     <div class="card-body d-flex flex-column">
 
-                        <h2 class="h4 card-title text-center">
+                        <h2 class="h4 card-title text-center" id="title-item-2">
                             2-ОБРАЗ
                         </h2>
 
-                        <p class="price-amount text-center fw-bold fs-5">
+                        <p class="price-amount text-center fw-bold fs-5" id="price-item-2" style="color: #5C061C;">
                             30 980 ₸
                         </p>
 
@@ -220,15 +220,15 @@
                             <select id="select-item-2"
                                     class="form-select">
 
-                                <option>
+                                <option value="30980">
                                     Толық образ (Комплект) — 30 980 ₸
                                 </option>
 
-                                <option>
+                                <option value="16990">
                                     Блузка — 16 990 ₸
                                 </option>
 
-                                <option>
+                                <option value="13990">
                                     Аладдин шалбар — 13 990 ₸
                                 </option>
 
@@ -247,15 +247,16 @@
                             <select id="select-size-2"
                                     class="form-select">
 
-                                <option>S (42)</option>
-                                <option>M (44)</option>
-                                <option>L (46)</option>
+                                <option value="S">S (42)</option>
+                                <option value="M">M (44)</option>
+                                <option value="L">L (46)</option>
 
                             </select>
 
                         </div>
 
                         <button type="button"
+                                id="add-to-cart-btn-2"
                                 class="btn btn-dark w-100 mt-auto">
                             Себетке қосу
                         </button>
@@ -266,12 +267,10 @@
 
             </div>
 
+            <!-- 3-ОБРАЗ -->
+            <div class="col-12 col-md-6 col-lg-4" id="product-card-col-3">
 
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <article class="card h-100 shadow-sm product-card">
+                <article class="card h-100 shadow-sm product-card" id="card-item-3">
 
                     <img src="images/togyz(3).png"
                          class="card-img-top img-fluid"
@@ -279,11 +278,11 @@
 
                     <div class="card-body d-flex flex-column">
 
-                        <h2 class="h4 card-title text-center">
+                        <h2 class="h4 card-title text-center" id="title-item-3">
                             3-ОБРАЗ
                         </h2>
 
-                        <p class="price-amount text-center fw-bold fs-5">
+                        <p class="price-amount text-center fw-bold fs-5" id="price-item-3" style="color: #5C061C;">
                             35 970 ₸
                         </p>
 
@@ -297,19 +296,19 @@
                             <select id="select-item-3"
                                     class="form-select">
 
-                                <option>
+                                <option value="35970">
                                     Толық образ (Комплект) — 35 970 ₸
                                 </option>
 
-                                <option>
+                                <option value="11990">
                                     Торкөзді жейде — 11 990 ₸
                                 </option>
 
-                                <option>
+                                <option value="7990">
                                     Футболка — 7 990 ₸
                                 </option>
 
-                                <option>
+                                <option value="15990">
                                     Шалбар — 15 990 ₸
                                 </option>
 
@@ -328,15 +327,16 @@
                             <select id="select-size-3"
                                     class="form-select">
 
-                                <option>S (42)</option>
-                                <option>M (44)</option>
-                                <option>L (46)</option>
+                                <option value="S">S (42)</option>
+                                <option value="M">M (44)</option>
+                                <option value="L">L (46)</option>
 
                             </select>
 
                         </div>
 
                         <button type="button"
+                                id="add-to-cart-btn-3"
                                 class="btn btn-dark w-100 mt-auto">
                             Себетке қосу
                         </button>
@@ -347,11 +347,10 @@
 
             </div>
 
+            <!-- 4-ОБРАЗ -->
+            <div class="col-12 col-md-6 col-lg-4" id="product-card-col-4">
 
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <article class="card h-100 shadow-sm product-card">
+                <article class="card h-100 shadow-sm product-card" id="card-item-4">
 
                     <img src="images/togyz(4).png"
                          class="card-img-top img-fluid"
@@ -359,11 +358,11 @@
 
                     <div class="card-body d-flex flex-column">
 
-                        <h2 class="h4 card-title text-center">
+                        <h2 class="h4 card-title text-center" id="title-item-4">
                             4-ОБРАЗ
                         </h2>
 
-                        <p class="price-amount text-center fw-bold fs-5">
+                        <p class="price-amount text-center fw-bold fs-5" id="price-item-4" style="color: #5C061C;">
                             39 990 ₸
                         </p>
 
@@ -377,7 +376,7 @@
                             <select id="select-item-4"
                                     class="form-select">
 
-                                <option>
+                                <option value="39990">
                                     Зығыр көйлек — 39 990 ₸
                                 </option>
 
@@ -396,15 +395,16 @@
                             <select id="select-size-4"
                                     class="form-select">
 
-                                <option>S (42)</option>
-                                <option>M (44)</option>
-                                <option>L (46)</option>
+                                <option value="S">S (42)</option>
+                                <option value="M">M (44)</option>
+                                <option value="L">L (46)</option>
 
                             </select>
 
                         </div>
 
                         <button type="button"
+                                id="add-to-cart-btn-4"
                                 class="btn btn-dark w-100 mt-auto">
                             Себетке қосу
                         </button>
@@ -415,12 +415,10 @@
 
             </div>
 
+            <!-- 5-ОБРАЗ -->
+            <div class="col-12 col-md-6 col-lg-4" id="product-card-col-5">
 
-    
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <article class="card h-100 shadow-sm product-card">
+                <article class="card h-100 shadow-sm product-card" id="card-item-5">
 
                     <img src="images/togyz(5).png"
                          class="card-img-top img-fluid"
@@ -428,11 +426,11 @@
 
                     <div class="card-body d-flex flex-column">
 
-                        <h2 class="h4 card-title text-center">
+                        <h2 class="h4 card-title text-center" id="title-item-5">
                             5-ОБРАЗ
                         </h2>
 
-                        <p class="price-amount text-center fw-bold fs-5">
+                        <p class="price-amount text-center fw-bold fs-5" id="price-item-5" style="color: #5C061C;">
                             26 990 ₸
                         </p>
 
@@ -446,7 +444,7 @@
                             <select id="select-item-5"
                                     class="form-select">
 
-                                <option>
+                                <option value="26990">
                                     Костюм-комплект — 26 990 ₸
                                 </option>
 
@@ -465,15 +463,16 @@
                             <select id="select-size-5"
                                     class="form-select">
 
-                                <option>S (42)</option>
-                                <option>M (44)</option>
-                                <option>L (46)</option>
+                                <option value="S">S (42)</option>
+                                <option value="M">M (44)</option>
+                                <option value="L">L (46)</option>
 
                             </select>
 
                         </div>
 
                         <button type="button"
+                                id="add-to-cart-btn-5"
                                 class="btn btn-dark w-100 mt-auto">
                             Себетке қосу
                         </button>
@@ -484,11 +483,10 @@
 
             </div>
 
+            <!-- 6-ОБРАЗ -->
+            <div class="col-12 col-md-6 col-lg-4" id="product-card-col-6">
 
-
-            <div class="col-12 col-md-6 col-lg-4">
-
-                <article class="card h-100 shadow-sm product-card">
+                <article class="card h-100 shadow-sm product-card" id="card-item-6">
 
                     <img src="images/togyz(6).png"
                          class="card-img-top img-fluid"
@@ -496,11 +494,11 @@
 
                     <div class="card-body d-flex flex-column">
 
-                        <h2 class="h4 card-title text-center">
+                        <h2 class="h4 card-title text-center" id="title-item-6">
                             6-ОБРАЗ
                         </h2>
 
-                        <p class="price-amount text-center fw-bold fs-5">
+                        <p class="price-amount text-center fw-bold fs-5" id="price-item-6" style="color: #5C061C;">
                             31 980 ₸
                         </p>
 
@@ -514,15 +512,15 @@
                             <select id="select-item-6"
                                     class="form-select">
 
-                                <option>
+                                <option value="31980">
                                     Толық образ (Комплект) — 31 980 ₸
                                 </option>
 
-                                <option>
+                                <option value="11990">
                                     Тор кофта — 11 990 ₸
                                 </option>
 
-                                <option>
+                                <option value="19990">
                                     Белдемше — 19 990 ₸
                                 </option>
 
@@ -541,15 +539,16 @@
                             <select id="select-size-6"
                                     class="form-select">
 
-                                <option>S (42)</option>
-                                <option>M (44)</option>
-                                <option>L (46)</option>
+                                <option value="S">S (42)</option>
+                                <option value="M">M (44)</option>
+                                <option value="L">L (46)</option>
 
                             </select>
 
                         </div>
 
                         <button type="button"
+                                id="add-to-cart-btn-6"
                                 class="btn btn-dark w-100 mt-auto">
                             Себетке қосу
                         </button>
@@ -564,18 +563,16 @@
 
     </section>
 
+    <!-- Table Section -->
+    <section class="mt-5" id="price-table-section">
 
-  
-
-    <section class="mt-5">
-
-        <h2 class="text-center mb-4">
+        <h2 class="text-center mb-4" style="color: #5C061C;">
             ӨНІМДЕРДІҢ БАҒАЛАРЫ
         </h2>
 
         <div class="table-responsive shadow-sm">
 
-            <table class="table table-bordered table-striped align-middle mb-0">
+            <table class="table table-bordered table-striped align-middle mb-0" id="product-price-table">
 
                 <thead>
                     <tr>
@@ -585,7 +582,7 @@
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="price-table-body">
 
                     <tr>
                         <td><span class="badge text-bg-light border price-badge">1-образ</span></td>
@@ -661,14 +658,14 @@
 
     </section>
 
+    <!-- Categories Section -->
+    <section class="mt-5" id="categories-section">
 
-    <section class="mt-5">
-
-        <h2 class="text-center mb-4">
+        <h2 class="text-center mb-4" style="color: #5C061C;">
             КИІМ САНАТТАРЫ
         </h2>
 
-        <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-2">
+        <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-2" id="categories-list">
 
             <li class="badge rounded-pill text-bg-light border p-3">
                 Сыртқы киімдер
@@ -700,24 +697,23 @@
 <footer class="container-fluid border-top text-center py-4 mt-5">
 
     <p class="small text-body-secondary mb-0">
-        &copy; 2026 Togyz Brand. Барлық құқықтар қорғалған.
+        &copy; 2026 TOGYZ BRAND. Барлық құқықтар қорғалған.
     </p>
 
 </footer>
-
 
 
 <div id="login-modal" class="modal-overlay">
 
     <div class="modal-content">
 
-        <a href="#" class="close-btn">&times;</a>
+        <a href="#" class="close-btn" id="close-login-btn">&times;</a>
 
         <h3>Жүйеге кіру</h3>
 
-        <form class="auth-form">
+        <form class="auth-form" id="catalog-login-form">
 
-            <div class="form-group">
+            <div class="form-group mb-2">
 
                 <label for="login-email">
                     Email:
@@ -725,11 +721,12 @@
 
                 <input type="email"
                        id="login-email"
+                       class="form-control"
                        required>
 
             </div>
 
-            <div class="form-group">
+            <div class="form-group mb-2">
 
                 <label for="login-pass">
                     Құпия сөз:
@@ -737,11 +734,13 @@
 
                 <input type="password"
                        id="login-pass"
+                       class="form-control"
                        required>
 
             </div>
 
             <button type="submit"
+                    id="catalog-login-submit"
                     class="btn btn-dark w-100 mt-2">
                 Кіру
             </button>
@@ -753,18 +752,17 @@
 </div>
 
 
-
 <div id="signup-modal" class="modal-overlay">
 
     <div class="modal-content">
 
-        <a href="#" class="close-btn">&times;</a>
+        <a href="#" class="close-btn" id="close-signup-btn">&times;</a>
 
         <h3>Тіркелу</h3>
 
-        <form class="auth-form">
+        <form class="auth-form" id="catalog-signup-form">
 
-            <div class="form-group">
+            <div class="form-group mb-2">
 
                 <label for="reg-name">
                     Аты-жөні:
@@ -772,11 +770,12 @@
 
                 <input type="text"
                        id="reg-name"
+                       class="form-control"
                        required>
 
             </div>
 
-            <div class="form-group">
+            <div class="form-group mb-2">
 
                 <label for="reg-email">
                     Email:
@@ -784,11 +783,12 @@
 
                 <input type="email"
                        id="reg-email"
+                       class="form-control"
                        required>
 
             </div>
 
-            <div class="form-group">
+            <div class="form-group mb-2">
 
                 <label for="reg-pass">
                     Құпия сөз:
@@ -796,11 +796,13 @@
 
                 <input type="password"
                        id="reg-pass"
+                       class="form-control"
                        required>
 
             </div>
 
             <button type="submit"
+                    id="catalog-signup-submit"
                     class="btn btn-dark w-100 mt-2">
                 Тіркелу
             </button>
@@ -812,8 +814,8 @@
 </div>
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap 5.3.2 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

@@ -1,0 +1,10 @@
+QUALITY PASS FINDINGS & FIXES (TOGYZ BRAND):
+
+1. Finding: Branch images on index.html had inconsistent heights/formats.
+   Fix: Applied object-fit: cover and Bootstrap ratio container for uniform card layout.
+
+2. Finding: Nav links and IDs needed standardized JS hooks across all 6 pages.
+   Fix: Added lowercase English unique IDs to forms, buttons, and dynamic content containers.
+
+3. Finding: Mobile layout responsiveness check (375px width).
+   Fix: Ensured zero horizontal overflow and proper Bootstrap grid padding.
