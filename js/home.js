@@ -1,0 +1,2 @@
+'use strict';
+document.addEventListener('DOMContentLoaded',()=>{if(!location.pathname.endsWith('/index.html')&&!location.pathname.endsWith('/'))return;const main=document.querySelector('main');if(!main)return;const heading=main.querySelector('h1');if(heading)heading.dataset.i18n='homeAbout';document.addEventListener('togyz:language',()=>{if(heading)heading.textContent=tr('homeAbout');});});

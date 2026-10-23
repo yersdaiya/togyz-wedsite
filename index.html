@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>TOGYZ BRAND — Басты бет</title>
 
     <!-- Bootstrap 5.3.2 CDN -->
@@ -17,7 +16,7 @@
 
 <body>
 
-<!-- Bootstrap Navbar Component -->
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg bg-light border-bottom shadow-sm">
     <div class="container">
 
@@ -25,7 +24,6 @@
             TOGYZ BRAND
         </a>
 
-        <!-- Small screens: collapsed navigation toggle -->
         <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -40,54 +38,43 @@
 
             <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item">
-                    <a class="nav-link active fw-bold"
-                       aria-current="page"
-                       href="index.html">
+                    <a class="nav-link active fw-bold" aria-current="page" href="index.html" data-i18n="navHome">
                         БАСТЫ БЕТ
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="catalog.html">
+                    <a class="nav-link" href="catalog.html" data-i18n="navCatalog">
                         КАТАЛОГ
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="size-guide.html">
+                    <a class="nav-link" href="size-guide.html" data-i18n="navSize">
                         ӨЛШЕМДЕР КЕСТЕСІ
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="order.html">
+                    <a class="nav-link" href="order.html" data-i18n="navOrder">
                         ТАПСЫРЫС БЕРУ
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="reviews.html">
+                    <a class="nav-link" href="reviews.html" data-i18n="navReviews">
                         ПІКІРЛЕР
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.html">
+                    <a class="nav-link" href="cart.html" data-i18n="navCart">
                         СЕБЕТ 🛒
                     </a>
                 </li>
             </ul>
 
-            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0">
-                <a href="#login-modal"
-                   id="nav-login-btn"
-                   class="btn btn-outline-dark btn-sm">
+            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0 align-items-center">
+                <a href="#login-modal" id="nav-login-btn" class="btn btn-outline-dark btn-sm" data-i18n="navLogin">
                     Кіру
                 </a>
 
-                <a href="#signup-modal"
-                   id="nav-signup-btn"
-                   class="btn btn-dark btn-sm">
+                <a href="#signup-modal" id="nav-signup-btn" class="btn btn-dark btn-sm" data-i18n="navRegister">
                     Тіркелу
                 </a>
             </div>
@@ -98,293 +85,178 @@
 
 
 <main id="index-main-content">
-
-    <!-- Responsive fixed-width container -->
     <div class="container py-5">
 
         <!-- ДҮКЕН ТУРАЛЫ -->
         <section id="introduction-section" class="mb-5">
-
-            <h1 class="display-6 text-center mb-4" style="color: #5C061C;">
+            <h1 class="display-6 text-center mb-4" style="color: #5C061C;" data-i18n="aboutTitle">
                 Дүкен туралы
             </h1>
-
-            <p class="lead text-center">
-                <strong>TOGYZ BRAND</strong> — заманауи әрі сәнді әйелдер киімін
-                ұсынатын Қазақстандағы танымал брендтердің бірі.
-                Дүкен жинағында күнделікті киюге арналған ыңғайлы
-                киімдерден бастап, кешкі жиындар мен салтанатты
-                шараларға арналған сәнді көйлектер, костюмдер және
-                сапалы аяқ киімдер бар.
+            <p class="lead text-center" data-i18n="aboutDesc">
+                <strong>TOGYZ BRAND</strong> — заманауи әрі сәнді әйелдер киімін ұсынатын Қазақстандағы танымал брендтердің бірі. Дүкен жинағында күнделікті киюге арналған ыңғайлы киімдерден бастап, кешкі жиындар мен салтанатты шараларға арналған сәнді көйлектер, костюмдер және сапалы аяқ киімдер бар.
             </p>
-
         </section>
-
 
         <!-- ДҮКЕННЕН КӨРІНІС -->
         <section id="store-view-section" class="mb-5">
-
-            <h2 class="text-center mb-3">
+            <h2 class="text-center mb-3" data-i18n="galleryTitle">
                 Дүкеннен көрініс
             </h2>
-
-            <p class="text-center text-body-secondary mb-4">
+            <p class="text-center text-body-secondary mb-4" data-i18n="gallerySubtitle">
                 Жайлы атмосфера мен эстетикалық кеңістік
             </p>
 
             <div class="row g-4 justify-content-center" id="store-images-grid">
+                <div class="col-12 col-md-6">
+                    <figure class="card h-100 shadow-sm border" id="store-branch-1">
+                        <div class="ratio ratio-4x3">
+                            <img src="images/togyz.png" class="card-img-top object-fit-cover" alt="Togyz дүкені 1-филиал">
+                        </div>
+                        <figcaption class="card-body text-center">
+                            <p class="card-text mb-0 fw-bold" data-i18n="branch1">Астана қ., 1-филиал</p>
+                        </figcaption>
+                    </figure>
+                </div>
 
-         
-<div class="col-12 col-md-6">
-    <figure class="card h-100 shadow-sm border" id="store-branch-1">
-        <div class="ratio ratio-4x3">
-            <img src="images/togyz.png"
-                 class="card-img-top object-fit-cover"
-                 alt="Togyz дүкені 1-филиал">
-        </div>
-        <figcaption class="card-body text-center">
-            <p class="card-text mb-0 fw-bold">Астана қ., 1-филиал</p>
-        </figcaption>
-    </figure>
-</div>
-
-
-<div class="col-12 col-md-6">
-    <figure class="card h-100 shadow-sm border" id="store-branch-2">
-        <div class="ratio ratio-4x3">
-            <img src="images/togyz16.jpg"
-                 class="card-img-top object-fit-cover"
-                 alt="Togyz дүкені 2-филиал">
-        </div>
-        <figcaption class="card-body text-center">
-            <p class="card-text mb-0 fw-bold">Астана қ., 2-филиал</p>
-        </figcaption>
-    </figure>
-</div>
-
+                <div class="col-12 col-md-6">
+                    <figure class="card h-100 shadow-sm border" id="store-branch-2">
+                        <div class="ratio ratio-4x3">
+                            <img src="images/togyz16.jpg" class="card-img-top object-fit-cover" alt="Togyz дүкені 2-филиал">
+                        </div>
+                        <figcaption class="card-body text-center">
+                            <p class="card-text mb-0 fw-bold" data-i18n="branch2">Астана қ., 2-филиал</p>
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
-
         </section>
-
 
         <!-- БРЕНД ФИЛОСОФИЯСЫ -->
         <section id="philosophy-section" class="mb-5">
-
-            <h2 class="text-center mb-4">
+            <h2 class="text-center mb-4" data-i18n="philosophyTitle">
                 Бренд философиясы
             </h2>
 
             <div class="card shadow-sm border">
-
                 <div class="card-body text-center p-4">
-
-                    <p class="lead mb-3">
-                        «Біз жай ғана киім сатпаймыз, біз әрбір әйелдің
-                        өзіне деген сенімділігі мен ерекше стилін
-                        қалыптастыруға көмектесеміз.»
+                    <p class="lead mb-3" data-i18n="philosophyQuote">
+                        «Біз жай ғана киім сатпаймыз, біз әрбір әйелдің өзіне деген сенімділігі мен ерекше стилін қалыптастыруға көмектесеміз.»
                     </p>
-
-                    <p class="text-body-secondary small mb-0">
-                        — Тоғыз брендінің негізін қалаушы
-                        <span>(2025 жыл)</span>
+                    <p class="text-body-secondary small mb-0" data-i18n="philosophyAuthor">
+                        — Тоғыз брендінің негізін қалаушы (2025 жыл)
                     </p>
-
                 </div>
-
             </div>
-
         </section>
-
 
         <!-- МЕКЕНЖАЙЫМЫЗ МЕН БАЙЛАНЫС -->
         <section id="contact-info-section" class="contact-section mb-5">
-
-            <h2 class="text-center mb-4" style="color: #5C061C;">
+            <h2 class="text-center mb-4" style="color: #5C061C;" data-i18n="contactTitle">
                 МЕКЕНЖАЙЫМЫЗ МЕН БАЙЛАНЫС
             </h2>
 
             <div class="card shadow-sm border">
-
                 <div class="card-body text-center p-4">
-
-                    <p class="fw-bold">
+                    <p class="fw-bold" data-i18n="addressLabel">
                         Мекенжайлары:
                     </p>
 
                     <p>
-                        • 1-филиал: Астана қ., Қабанбай Батыр 49А
-                        (<a href="https://2gis.kz/astana/geo/70000001114635110"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            id="map-link-1">
+                        - <span data-i18n="branch1">1-филиал: Астана қ., Қабанбай Батыр 49А</span>
+                        (<a href="https://2gis.kz/astana/geo/70000001114635110" target="_blank" rel="noopener noreferrer" id="map-link-1" data-i18n="mapLink">
                             2GIS картасынан қарау
                         </a>)
                     </p>
 
                     <p>
-                        • 2-филиал: Астана қ., Әлихан Бөкейхан 16/1
-                        (<a href="https://2gis.kz/astana/geo/70000001113373579"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            id="map-link-2">
+                        - <span data-i18n="branch2">2-филиал: Астана қ., Әлихан Бөкейхан 16/1</span>
+                        (<a href="https://2gis.kz/astana/geo/70000001113373579" target="_blank" rel="noopener noreferrer" id="map-link-2" data-i18n="mapLink">
                             2GIS картасынан қарау
                         </a>)
                     </p>
 
-                    <p class="mt-3">
-                        <strong>Жұмыс уақыты:</strong>
-                        Күнделікті 11:00 - 20:30
+                    <p class="mt-3" data-i18n="workHours">
+                        <strong>Жұмыс уақыты:</strong> Күнделікті 11:00 - 20:30
                     </p>
 
                     <p>
-                        <strong>Телефон:</strong>
-                        <a href="tel:+77019992989" id="store-phone-link">
-                            +7 (701) 999-29-89
-                        </a>
+                        <strong data-i18n="phoneLabel">Телефон:</strong>
+                        <a href="tel:+77019992989" id="store-phone-link">+7 (701) 999-29-89</a>
                     </p>
 
                     <p>
                         <strong>Email:</strong>
-                        <a href="mailto:info@togyzstore.kz" id="store-email-link">
-                            info@togyzstore.kz
-                        </a>
+                        <a href="mailto:info@togyzstore.kz" id="store-email-link">info@togyzstore.kz</a>
                     </p>
 
                     <p class="mb-0">
                         <strong>Instagram:</strong>
-                        <a href="https://www.instagram.com/togyz_kz?stkn=aGNscjdhZm5xNGxv"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           id="store-instagram-link">
-                            @togyz_kz
-                        </a>
+                        <a href="https://www.instagram.com/togyz_kz?stkn=aGNscjdhZm5xNGxv" target="_blank" rel="noopener noreferrer" id="store-instagram-link">@togyz_kz</a>
                     </p>
-
                 </div>
-
             </div>
-
         </section>
 
     </div>
-
 </main>
 
 
 <footer class="container-fluid border-top text-center py-4 mt-5">
-    <p class="small text-body-secondary mb-0">
+    <p class="small text-body-secondary mb-0" data-i18n="footerText">
         &copy; 2026 TOGYZ BRAND. Барлық құқықтар қорғалған.
     </p>
 </footer>
 
-
-<!-- Login Modal -->
+<!-- Modals -->
 <div id="login-modal" class="modal-overlay">
-
     <div class="modal-content">
-
         <a href="#" class="close-btn" id="close-login-btn">&times;</a>
-
-        <h3>Жүйеге кіру</h3>
-
+        <h3 data-i18n="modalLoginTitle">Жүйеге кіру</h3>
         <form class="auth-form" id="index-login-form">
-
             <div class="form-group mb-2">
                 <label for="login-email">Email:</label>
-
-                <input type="email"
-                       id="login-email"
-                       class="form-control"
-                       required>
+                <input type="email" id="login-email" class="form-control" required>
             </div>
-
             <div class="form-group mb-2">
-                <label for="login-pass">Құпия сөз:</label>
-
-                <input type="password"
-                       id="login-pass"
-                       class="form-control"
-                       required>
+                <label for="login-pass" data-i18n="labelPass">Құпия сөз:</label>
+                <input type="password" id="login-pass" class="form-control" required>
             </div>
-
-            <button type="submit"
-                    id="index-login-submit"
-                    class="btn btn-dark w-100 mt-2">
+            <button type="submit" id="index-login-submit" class="btn btn-dark w-100 mt-2" data-i18n="navLogin">
                 Кіру
             </button>
-
         </form>
-
     </div>
-
 </div>
 
-
-<!-- Signup Modal -->
 <div id="signup-modal" class="modal-overlay">
-
     <div class="modal-content">
-
         <a href="#" class="close-btn" id="close-signup-btn">&times;</a>
-
-        <h3>Тіркелу</h3>
-
+        <h3 data-i18n="modalSignupTitle">Тіркелу</h3>
         <form class="auth-form" id="index-signup-form">
-
             <div class="form-group mb-2">
-
-                <label for="reg-name">
-                    Аты-жөні:
-                </label>
-
-                <input type="text"
-                       id="reg-name"
-                       class="form-control"
-                       required>
-
+                <label for="reg-name" data-i18n="labelName">Аты-жөні:</label>
+                <input type="text" id="reg-name" class="form-control" required>
             </div>
-
             <div class="form-group mb-2">
-
-                <label for="reg-email">
-                    Email:
-                </label>
-
-                <input type="email"
-                       id="reg-email"
-                       class="form-control"
-                       required>
-
+                <label for="reg-email">Email:</label>
+                <input type="email" id="reg-email" class="form-control" required>
             </div>
-
             <div class="form-group mb-2">
-
-                <label for="reg-pass">
-                    Құпия сөз:
-                </label>
-
-                <input type="password"
-                       id="reg-pass"
-                       class="form-control"
-                       required>
-
+                <label for="reg-pass" data-i18n="labelPass">Құпия сөз:</label>
+                <input type="password" id="reg-pass" class="form-control" required>
             </div>
-
-            <button type="submit"
-                    id="index-signup-submit"
-                    class="btn btn-dark w-100 mt-2">
+            <button type="submit" id="index-signup-submit" class="btn btn-dark w-100 mt-2" data-i18n="navRegister">
                 Тіркелу
             </button>
-
         </form>
-
     </div>
-
 </div>
 
-
-<!-- Bootstrap 5.3.2 JS Bundle -->
+<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="js/data.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/home.js" defer></script>
 </body>
 </html>

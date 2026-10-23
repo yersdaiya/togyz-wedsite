@@ -39,7 +39,7 @@
             <ul class="navbar-nav mx-auto text-center">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="index.html" data-i18n="navHome">
                         БАСТЫ БЕТ
                     </a>
                 </li>
@@ -47,44 +47,45 @@
                 <li class="nav-item">
                     <a class="nav-link active fw-bold"
                        aria-current="page"
-                       href="catalog.html">
+                       href="catalog.html"
+                       data-i18n="navCatalog">
                         КАТАЛОГ
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="size-guide.html">
+                    <a class="nav-link" href="size-guide.html" data-i18n="navSize">
                         ӨЛШЕМДЕР КЕСТЕСІ
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="order.html">
+                    <a class="nav-link" href="order.html" data-i18n="navOrder">
                         ТАПСЫРЫС БЕРУ
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="reviews.html">
+                    <a class="nav-link" href="reviews.html" data-i18n="navReviews">
                         ПІКІРЛЕР
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.html">
+                    <a class="nav-link" href="cart.html" data-i18n="navCart">
                         СЕБЕТ 🛒
                     </a>
                 </li>
 
             </ul>
 
-            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0">
+            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0 align-items-center">
 
-                <a href="#login-modal" id="nav-login-btn" class="btn btn-outline-dark btn-sm">
+                <a href="#login-modal" id="nav-login-btn" class="btn btn-outline-dark btn-sm" data-i18n="navLogin">
                     Кіру
                 </a>
 
-                <a href="#signup-modal" id="nav-signup-btn" class="btn btn-dark btn-sm">
+                <a href="#signup-modal" id="nav-signup-btn" class="btn btn-dark btn-sm" data-i18n="navRegister">
                     Тіркелу
                 </a>
 
@@ -99,15 +100,15 @@
 
     <section id="collection" class="mb-5">
 
-        <h1 class="display-6 text-center mb-2" style="color: #5C061C;">
+        <h1 class="display-6 text-center mb-2" style="color: #5C061C;" data-i18n="catalogMainTitle">
             КҮЗГІ ТОПТАМАСЫ
         </h1>
 
-        <p class="lead text-center text-body-secondary mb-5">
+        <p class="lead text-center text-body-secondary mb-5" data-i18n="catalogSubTitle">
             Жаңа маусымға арналған сәнді образдар
         </p>
 
-        <!-- Empty alert container for dynamic JS message (e.g. Added to Cart notification) -->
+        <!-- Dynamic alert notification -->
         <div id="catalog-toast-message" class="alert alert-success text-center d-none" role="alert">
             Тауар себетке сәтті қосылды!
         </div>
@@ -136,7 +137,8 @@
                         <div class="mb-3">
 
                             <label for="select-item-1"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelType">
                                 Киім түрі:
                             </label>
 
@@ -163,7 +165,8 @@
                         <div class="mb-3">
 
                             <label for="select-size-1"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelSize">
                                 Өлшемі:
                             </label>
 
@@ -181,7 +184,9 @@
 
                         <button type="button"
                                 id="add-to-cart-btn-1"
-                                class="btn btn-dark w-100 mt-auto">
+                                class="btn btn-dark w-100 mt-auto add-to-cart-btn"
+                                data-id="1"
+                                data-i18n="btnAddToCart">
                             Себетке қосу
                         </button>
 
@@ -213,7 +218,8 @@
                         <div class="mb-3">
 
                             <label for="select-item-2"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelType">
                                 Киім түрі:
                             </label>
 
@@ -240,7 +246,8 @@
                         <div class="mb-3">
 
                             <label for="select-size-2"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelSize">
                                 Өлшемі:
                             </label>
 
@@ -257,7 +264,9 @@
 
                         <button type="button"
                                 id="add-to-cart-btn-2"
-                                class="btn btn-dark w-100 mt-auto">
+                                class="btn btn-dark w-100 mt-auto add-to-cart-btn"
+                                data-id="2"
+                                data-i18n="btnAddToCart">
                             Себетке қосу
                         </button>
 
@@ -289,7 +298,8 @@
                         <div class="mb-3">
 
                             <label for="select-item-3"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelType">
                                 Киім түрі:
                             </label>
 
@@ -320,7 +330,8 @@
                         <div class="mb-3">
 
                             <label for="select-size-3"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelSize">
                                 Өлшемі:
                             </label>
 
@@ -337,7 +348,9 @@
 
                         <button type="button"
                                 id="add-to-cart-btn-3"
-                                class="btn btn-dark w-100 mt-auto">
+                                class="btn btn-dark w-100 mt-auto add-to-cart-btn"
+                                data-id="3"
+                                data-i18n="btnAddToCart">
                             Себетке қосу
                         </button>
 
@@ -369,7 +382,8 @@
                         <div class="mb-3">
 
                             <label for="select-item-4"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelType">
                                 Киім түрі:
                             </label>
 
@@ -388,7 +402,8 @@
                         <div class="mb-3">
 
                             <label for="select-size-4"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelSize">
                                 Өлшемі:
                             </label>
 
@@ -405,7 +420,9 @@
 
                         <button type="button"
                                 id="add-to-cart-btn-4"
-                                class="btn btn-dark w-100 mt-auto">
+                                class="btn btn-dark w-100 mt-auto add-to-cart-btn"
+                                data-id="4"
+                                data-i18n="btnAddToCart">
                             Себетке қосу
                         </button>
 
@@ -437,7 +454,8 @@
                         <div class="mb-3">
 
                             <label for="select-item-5"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelType">
                                 Киім түрі:
                             </label>
 
@@ -456,7 +474,8 @@
                         <div class="mb-3">
 
                             <label for="select-size-5"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelSize">
                                 Өлшемі:
                             </label>
 
@@ -473,7 +492,9 @@
 
                         <button type="button"
                                 id="add-to-cart-btn-5"
-                                class="btn btn-dark w-100 mt-auto">
+                                class="btn btn-dark w-100 mt-auto add-to-cart-btn"
+                                data-id="5"
+                                data-i18n="btnAddToCart">
                             Себетке қосу
                         </button>
 
@@ -505,7 +526,8 @@
                         <div class="mb-3">
 
                             <label for="select-item-6"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelType">
                                 Киім түрі:
                             </label>
 
@@ -532,7 +554,8 @@
                         <div class="mb-3">
 
                             <label for="select-size-6"
-                                   class="form-label fw-bold">
+                                   class="form-label fw-bold"
+                                   data-i18n="labelSize">
                                 Өлшемі:
                             </label>
 
@@ -549,7 +572,9 @@
 
                         <button type="button"
                                 id="add-to-cart-btn-6"
-                                class="btn btn-dark w-100 mt-auto">
+                                class="btn btn-dark w-100 mt-auto add-to-cart-btn"
+                                data-id="6"
+                                data-i18n="btnAddToCart">
                             Себетке қосу
                         </button>
 
@@ -566,7 +591,7 @@
     <!-- Table Section -->
     <section class="mt-5" id="price-table-section">
 
-        <h2 class="text-center mb-4" style="color: #5C061C;">
+        <h2 class="text-center mb-4" style="color: #5C061C;" data-i18n="priceTableTitle">
             ӨНІМДЕРДІҢ БАҒАЛАРЫ
         </h2>
 
@@ -576,9 +601,9 @@
 
                 <thead>
                     <tr>
-                        <th>Образ</th>
-                        <th>Өнім</th>
-                        <th class="text-end">Бағасы</th>
+                        <th data-i18n="thOutfit">Образ</th>
+                        <th data-i18n="thProductItem">Өнім</th>
+                        <th class="text-end" data-i18n="thPrice">Бағасы</th>
                     </tr>
                 </thead>
 
@@ -661,29 +686,29 @@
     <!-- Categories Section -->
     <section class="mt-5" id="categories-section">
 
-        <h2 class="text-center mb-4" style="color: #5C061C;">
+        <h2 class="text-center mb-4" style="color: #5C061C;" data-i18n="categoriesTitle">
             КИІМ САНАТТАРЫ
         </h2>
 
         <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-2" id="categories-list">
 
-            <li class="badge rounded-pill text-bg-light border p-3">
+            <li class="badge rounded-pill text-bg-light border p-3" data-i18n="catOuterwear">
                 Сыртқы киімдер
             </li>
 
-            <li class="badge rounded-pill text-bg-light border p-3">
+            <li class="badge rounded-pill text-bg-light border p-3" data-i18n="catShirts">
                 Жейделер
             </li>
 
-            <li class="badge rounded-pill text-bg-light border p-3">
+            <li class="badge rounded-pill text-bg-light border p-3" data-i18n="catPants">
                 Шалбарлар
             </li>
 
-            <li class="badge rounded-pill text-bg-light border p-3">
+            <li class="badge rounded-pill text-bg-light border p-3" data-i18n="catSkirts">
                 Белдемшелер
             </li>
 
-            <li class="badge rounded-pill text-bg-light border p-3">
+            <li class="badge rounded-pill text-bg-light border p-3" data-i18n="catDresses">
                 Көйлектер
             </li>
 
@@ -696,7 +721,7 @@
 
 <footer class="container-fluid border-top text-center py-4 mt-5">
 
-    <p class="small text-body-secondary mb-0">
+    <p class="small text-body-secondary mb-0" data-i18n="footerText">
         &copy; 2026 TOGYZ BRAND. Барлық құқықтар қорғалған.
     </p>
 
@@ -709,7 +734,7 @@
 
         <a href="#" class="close-btn" id="close-login-btn">&times;</a>
 
-        <h3>Жүйеге кіру</h3>
+        <h3 data-i18n="modalLoginTitle">Жүйеге кіру</h3>
 
         <form class="auth-form" id="catalog-login-form">
 
@@ -728,7 +753,7 @@
 
             <div class="form-group mb-2">
 
-                <label for="login-pass">
+                <label for="login-pass" data-i18n="labelPass">
                     Құпия сөз:
                 </label>
 
@@ -741,7 +766,8 @@
 
             <button type="submit"
                     id="catalog-login-submit"
-                    class="btn btn-dark w-100 mt-2">
+                    class="btn btn-dark w-100 mt-2"
+                    data-i18n="navLogin">
                 Кіру
             </button>
 
@@ -758,13 +784,13 @@
 
         <a href="#" class="close-btn" id="close-signup-btn">&times;</a>
 
-        <h3>Тіркелу</h3>
+        <h3 data-i18n="modalSignupTitle">Тіркелу</h3>
 
         <form class="auth-form" id="catalog-signup-form">
 
             <div class="form-group mb-2">
 
-                <label for="reg-name">
+                <label for="reg-name" data-i18n="labelName">
                     Аты-жөні:
                 </label>
 
@@ -790,7 +816,7 @@
 
             <div class="form-group mb-2">
 
-                <label for="reg-pass">
+                <label for="reg-pass" data-i18n="labelPass">
                     Құпия сөз:
                 </label>
 
@@ -803,7 +829,8 @@
 
             <button type="submit"
                     id="catalog-signup-submit"
-                    class="btn btn-dark w-100 mt-2">
+                    class="btn btn-dark w-100 mt-2"
+                    data-i18n="navRegister">
                 Тіркелу
             </button>
 
@@ -814,9 +841,12 @@
 </div>
 
 
-<!-- Bootstrap 5.3.2 JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="js/data.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/cart.js" defer></script>
+<script src="js/catalog.js" defer></script>
 </body>
 
 </html>
