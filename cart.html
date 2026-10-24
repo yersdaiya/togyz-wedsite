@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Себет TOGYZ BRAND</title>
+    <title>Togyz - Себет</title>
     <!-- Bootstrap 5.3.2 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
@@ -11,6 +11,7 @@
 </head>
 <body>
 
+<!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg bg-light border-bottom shadow-sm">
     <div class="container">
         <a class="navbar-brand fw-bold" href="index.html" style="color: #5C061C;">TOGYZ BRAND</a>
@@ -26,7 +27,7 @@
                 <li class="nav-item"><a class="nav-link" href="reviews.html" data-i18n="navReviews">ПІКІРЛЕР</a></li>
                 <li class="nav-item"><a class="nav-link active fw-bold" href="cart.html" data-i18n="navCart">СЕБЕТ 🛒</a></li>
             </ul>
-            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0 align-items-center">
+            <div class="auth-buttons-container d-flex justify-content-center gap-2 mt-3 mt-lg-0 align-items-center">
                 <a href="#login-modal" id="nav-login-btn" class="btn btn-outline-dark btn-sm" data-i18n="navLogin">Кіру</a>
                 <a href="#signup-modal" id="nav-signup-btn" class="btn btn-dark btn-sm" data-i18n="navRegister">Тіркелу</a>
             </div>
@@ -35,55 +36,61 @@
 </nav>
 
 <main class="container py-5" id="cart-main-container">
-    <h1 class="display-6 text-center mb-3" style="color: #5C061C;" data-i18n="cartTitle">СІЗДІҢ СЕБЕТІҢІЗ</h1>
+    <h1 class="display-5 text-center mb-2" style="color: #5C061C; font-family: serif;" data-i18n="cartTitle">СІЗДІҢ СЕБЕТІҢІЗ</h1>
     <p class="lead text-center text-body-secondary mb-5" data-i18n="cartSub">Таңдалған тауарларыңызды тексеріңіз</p>
 
-    <div id="empty-cart-message" class="alert alert-info text-center d-none" role="alert">
-        Себетіңіз бос. <a href="catalog.html" class="alert-link">Каталогқа өтіп</a> тауар таңдаңыз.
-    </div>
-
-    <!-- Table Section -->
-    <section class="mb-4" id="cart-table-section">
-        <div class="table-responsive shadow-sm">
-            <table class="table table-bordered table-striped align-middle mb-0" id="cart-table">
-                <thead>
-                    <tr>
-                        <th data-i18n="thProduct">Тауар</th>
-                        <th data-i18n="thSize">Өлшемі</th>
-                        <th data-i18n="thColor">Түсі</th>
-                        <th class="text-end" data-i18n="thPrice">Бағасы</th>
-                        <th class="text-center" data-i18n="thDelete">Жою</th>
-                    </tr>
-                </thead>
-                <tbody id="cart-items-list">
-                    <!-- Dynamic cart items JS injection hook -->
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Summary Section -->
-    <section id="cart-summary-section">
-        <div class="row justify-content-end">
-            <div class="col-12 col-md-7 col-lg-5">
-                <div class="card shadow-sm border p-4">
-                    <h2 class="h4 mb-4" style="color: #5C061C;" data-i18n="orderSummaryTitle">Тапсырыс қорытындысы</h2>
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <span data-i18n="itemCountLabel">Тауар саны:</span>
-                        <span class="badge text-bg-dark" id="cart-item-count">0</span>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <span class="fw-bold" data-i18n="totalLabel">Барлығы:</span>
-                        <span class="fw-bold fs-5 price-amount" id="cart-total-price" style="color: #5C061C;">0 ₸</span>
-                    </div>
-                    <div class="d-grid gap-2">
-                        <a href="order.html" id="checkout-btn" class="btn btn-dark btn-lg" data-i18n="btnCheckout">Тапсырысты рәсімдеу →</a>
-                        <a href="catalog.html" id="continue-shopping-btn" class="btn btn-outline-dark" data-i18n="btnContinueShopping">Сатып алуды жалғастыру</a>
-                    </div>
+    <div class="row g-4">
+        <!-- Таблица товаров -->
+        <div class="col-12 col-lg-8">
+            <div class="table-responsive shadow-sm rounded-3 border bg-white p-3">
+                <table class="table align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th data-i18n="thProduct">Тауар</th>
+                            <th data-i18n="thSize">Size</th>
+                            <th data-i18n="thColor">Түсі</th>
+                            <th class="text-end" data-i18n="thPrice">Бағасы</th>
+                            <th class="text-center" data-i18n="thDelete">Жою</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items-list">
+                        <!-- Динамические товары -->
+                    </tbody>
+                </table>
+                <div id="empty-cart-message" class="text-center py-5 d-none">
+                    <p class="fs-5 text-secondary mb-0" data-i18n="cartEmptyMsg">Себетіңіз бос</p>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Итоговый блок -->
+        <div class="col-12 col-lg-4">
+            <div class="card shadow-sm border p-4 rounded-4" style="background-color: #FDFCF9;">
+                <h2 class="h5 fw-bold mb-4" style="color: #5C061C;" data-i18n="summaryTitle">Тапсырыс қорытындысы</h2>
+                
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="text-secondary" data-i18n="summaryItemCount">Тауар саны:</span>
+                    <span id="cart-item-count" class="badge text-bg-dark rounded-pill px-2 py-1">0</span>
+                </div>
+
+                <hr class="my-3">
+
+                <div class="d-flex justify-content-between mb-4 align-items-center">
+                    <span class="fw-bold fs-6" data-i18n="summaryTotal">Барлығы:</span>
+                    <span id="cart-total-price" class="fw-bold fs-4" style="color: #5C061C;">0 ₸</span>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <a href="order.html" class="btn btn-lg fw-semibold text-white py-2" style="background-color: #5C061C;" data-i18n="btnCheckout">
+                        Тапсырысты рәсімдеу →
+                    </a>
+                    <a href="catalog.html" class="btn btn-outline-dark btn-sm" data-i18n="btnContinueShopping">
+                        Сатып алуды жалғастыру
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <footer class="container-fluid border-top text-center py-4 mt-5">
@@ -134,8 +141,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/data.js" defer></script>
 <script src="js/main.js" defer></script>
-<script src="js/auth.js" defer></script>
-<script src="js/catalog.js" defer></script>
 <script src="js/cart.js" defer></script>
+<script src="js/auth.js" defer></script>
 </body>
 </html>

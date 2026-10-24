@@ -26,7 +26,7 @@
                 <li class="nav-item"><a class="nav-link" href="reviews.html" data-i18n="navReviews">ПІКІРЛЕР</a></li>
                 <li class="nav-item"><a class="nav-link" href="cart.html" data-i18n="navCart">СЕБЕТ 🛒</a></li>
             </ul>
-            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0 align-items-center">
+            <div class="auth-buttons-container d-flex justify-content-center gap-2 mt-3 mt-lg-0 align-items-center">
                 <a href="#login-modal" id="nav-login-btn" class="btn btn-outline-dark btn-sm" data-i18n="navLogin">Кіру</a>
                 <a href="#signup-modal" id="nav-signup-btn" class="btn btn-dark btn-sm" data-i18n="navRegister">Тіркелу</a>
             </div>
@@ -45,7 +45,7 @@
                     <form id="order-checkout-form">
                         <div class="mb-3">
                             <label for="fullname" class="form-label fw-bold" data-i18n="fullNameLabel">Аты-жөніңіз:</label>
-                            <input type="text" class="form-control" id="fullname" placeholder="Толық аты-жөніңізді енгізіңіз" required>
+                            <input type="text" class="form-control" id="fullname" placeholder="Толық аты-жөніңізді енгізіңіз" data-i18n="phFullName" required>
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label fw-bold" data-i18n="phoneInputLabel">Телефон нөміріңіз:</label>
@@ -54,48 +54,48 @@
                         <div class="mb-3">
                             <label for="region" class="form-label fw-bold" data-i18n="regionLabel">Жеткізу аймағы (Қала / Облыс):</label>
                             <select id="region" class="form-select" required>
-                                <option value="">Аймақты таңдаңыз...</option>
-                                <optgroup label="Республикалық маңызы бар қалалар">
-                                    <option value="astana">Астана қаласы</option>
-                                    <option value="almaty">Алматы қаласы</option>
-                                    <option value="shymkent">Шымкент қаласы</option>
+                                <option value="" data-i18n="optSelectRegion">Аймақты таңдаңыз...</option>
+                                <optgroup label="Республикалық маңызы бар қалалар" data-i18n-group="optGroupCities">
+                                    <option value="astana" data-i18n="optAstana">Астана қаласы</option>
+                                    <option value="almaty" data-i18n="optAlmaty">Алматы қаласы</option>
+                                    <option value="shymkent" data-i18n="optShymkent">Шымкент қаласы</option>
                                 </optgroup>
-                                <optgroup label="Облыстар мен Орталықтар">
-                                    <option value="zko">Батыс Қазақстан облысы (Орал)</option>
-                                    <option value="akmola">Ақмола облысы (Көкшетау)</option>
-                                    <option value="aktobe">Ақтөбе облысы</option>
-                                    <option value="almaty-obl">Алматы облысы (Қонаев)</option>
-                                    <option value="atyrau">Атырау облысы</option>
-                                    <option value="zhabyl">Жамбыл облысы (Тараз)</option>
-                                    <option value="zhetysu">Жетісу облысы (Талдықорған)</option>
-                                    <option value="karaganda">Қарағанды облысы</option>
-                                    <option value="kostanay">Қостанай облысы</option>
-                                    <option value="kyzylorda">Қызылорда облысы</option>
-                                    <option value="mangystau">Маңғыстау облысы (Ақтау)</option>
-                                    <option value="pavlodar">Павлодар облысы</option>
-                                    <option value="sko">Солтүстік Қазақстан облысы (Петропавл)</option>
-                                    <option value="turkestan">Түркістан облысы</option>
-                                    <option value="vko">Шығыс Қазақстан облысы (Өскемен)</option>
-                                    <option value="abai">Абай облысы (Семей)</option>
-                                    <option value="ulytau">Ұлытау облысы (Жезқазған)</option>
+                                <optgroup label="Облыстар мен Орталықтар" data-i18n-group="optGroupRegions">
+                                    <option value="zko" data-i18n="optZko">Батыс Қазақстан облысы (Орал)</option>
+                                    <option value="akmola" data-i18n="optAkmola">Ақмола облысы (Көкшетау)</option>
+                                    <option value="aktobe" data-i18n="optAktobe">Ақтөбе облысы</option>
+                                    <option value="almaty-obl" data-i18n="optAlmatyObl">Алматы облысы (Қонаев)</option>
+                                    <option value="atyrau" data-i18n="optAtyrau">Атырау облысы</option>
+                                    <option value="zhabyl" data-i18n="optZhambyl">Жамбыл облысы (Тараз)</option>
+                                    <option value="zhetysu" data-i18n="optZhetysu">Жетісу облысы (Талдықорған)</option>
+                                    <option value="karaganda" data-i18n="optKaraganda">Қарағанды облысы</option>
+                                    <option value="kostanay" data-i18n="optKostanay">Қостанай облысы</option>
+                                    <option value="kyzylorda" data-i18n="optKyzylorda">Қызылорда облысы</option>
+                                    <option value="mangystau" data-i18n="optMangystau">Маңғыстау облысы (Ақтау)</option>
+                                    <option value="pavlodar" data-i18n="optPavlodar">Павлодар облысы</option>
+                                    <option value="sko" data-i18n="optSko">Солтүстік Қазақстан облысы (Петропавл)</option>
+                                    <option value="turkestan" data-i18n="optTurkestan">Түркістан облысы</option>
+                                    <option value="vko" data-i18n="optVko">Шығыс Қазақстан облысы (Өскемен)</option>
+                                    <option value="abai" data-i18n="optAbai">Абай облысы (Семей)</option>
+                                    <option value="ulytau" data-i18n="optUlytau">Ұлытау облысы (Жезқазған)</option>
                                 </optgroup>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="address" class="form-label fw-bold" data-i18n="addressInputLabel">Жеткізу мекенжайы:</label>
-                            <input type="text" class="form-control" id="address" placeholder="көше, үй, пәтер" required>
+                            <input type="text" class="form-control" id="address" placeholder="көше, үй, пәтер" data-i18n="phAddress" required>
                         </div>
                         <div class="mb-4">
                             <label for="payment" class="form-label fw-bold" data-i18n="paymentLabel">Төлем түрі:</label>
                             <select id="payment" class="form-select" required>
-                                <option value="">Төлем әдісін таңдаңыз...</option>
-                                <option value="kaspi-qr">Kaspi QR / Red / Плюс</option>
-                                <option value="card">Банк картасымен онлайн төлеу</option>
-                                <option value="cash">Жеткізілгенде қолма-қол төлеу</option>
+                                <option value="" data-i18n="optSelectPayment">Төлем әдісін таңдаңыз...</option>
+                                <option value="kaspi-qr" data-i18n="optKaspi">Kaspi QR / Red / Плюс</option>
+                                <option value="card" data-i18n="optCard">Банк картасымен онлайн төлеу</option>
+                                <option value="cash" data-i18n="optCash">Жеткізілгенде қолма-қол төлеу</option>
                             </select>
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" id="submit-order-btn" class="btn btn-dark btn-lg" data-i18n="btnConfirmOrder">Тапсырысты растау</button>
+                            <button type="submit" id="submit-order-btn" class="btn btn-dark btn-lg" style="background-color: #5C061C; border: none;" data-i18n="btnConfirmOrder">Тапсырысты растау</button>
                             <a href="catalog.html" id="back-to-catalog-btn" class="btn btn-outline-dark" data-i18n="btnBackCatalog">Каталогқа оралу</a>
                         </div>
                     </form>

@@ -1,22 +1,49 @@
 'use strict';
-// Browser-only demonstration. Never save passwords.
-(function(){
- const profilesKey='togyzDemoUsers';
- function users(){try{return JSON.parse(localStorage.getItem(profilesKey)||'[]');}catch{return [];}}
- function currentProfile(){const email=localStorage.getItem('togyzActiveEmail');return users().find(u=>u.email===email)||null;}
- function emit(){document.dispatchEvent(new Event('togyz:profile'));renderNav();}
- function register(name,email,password,confirm){name=name.trim();email=email.trim().toLowerCase();const checks=[name.length>=2,/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),password.length>=8,/[A-Z]/.test(password),/[a-z]/.test(password),/\d/.test(password),/[^A-Za-z0-9]/.test(password),password===confirm];if(!checks.every(Boolean))return 'Check name, email, password rules and confirmation.';const all=users();if(all.some(u=>u.email===email))return 'This demo email already exists.';all.push({name,email});localStorage.setItem(profilesKey,JSON.stringify(all));localStorage.setItem('togyzActiveEmail',email);emit();return null;}
- function login(email){const user=users().find(u=>u.email===email.trim().toLowerCase());if(!user)return 'No demo profile with that email.';localStorage.setItem('togyzActiveEmail',user.email);emit();return null;}
- function logout(){localStorage.removeItem('togyzActiveEmail');emit();}
- window.TogyzDemoProfile={currentProfile,profileCartKey:()=>userKey(),profileOrdersKey:()=>('togyzOrders:'+encodeURIComponent(currentProfile()?.email||'guest')),logout};
- function field(form,selector){return form.querySelector(selector);}
- function profileWindow(){let overlay=document.querySelector('#togyz-profile-modal');if(overlay)return overlay;overlay=el('div','modal-overlay d-none');overlay.id='togyz-profile-modal';overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-label','Demo profile');const panel=el('div','modal-content bg-white p-4 rounded shadow');overlay.append(panel);document.body.append(overlay);overlay.addEventListener('click',e=>{if(e.target===overlay)close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});return overlay;}
- function close(){const o=document.querySelector('#togyz-profile-modal');o?.classList.add('d-none');o?.classList.remove('d-flex');}
- function showProfile(){const u=currentProfile();if(!u)return;const modal=profileWindow(),panel=modal.firstElementChild;panel.replaceChildren();const heading=el('h2','h4',tr('profile'));panel.append(heading);panel.append(el('p','',u.name+' · '+u.email));panel.append(el('p','',tr('cartQuantity')+' '+cartTotals().quantity));panel.append(el('h3','h5',tr('myOrders')));let orders=[];try{orders=JSON.parse(localStorage.getItem(window.TogyzDemoProfile.profileOrdersKey())||'[]');}catch{};if(!orders.length)panel.append(el('p','text-muted',tr('noOrders')));orders.forEach(o=>panel.append(el('p','border-bottom pb-2',o.ref+' · '+money(o.total)+' · '+o.date)));const name=el('input','form-control mb-2');name.value=u.name;name.setAttribute('aria-label',tr('labelName'));panel.append(name);const save=el('button','btn btn-outline-dark me-2 mb-2',tr('edit'));save.type='button';save.addEventListener('click',()=>{if(name.value.trim().length<2){statusMessage(panel,'Name is too short','error');return;}const all=users();const found=all.find(x=>x.email===u.email);found.name=name.value.trim();localStorage.setItem(profilesKey,JSON.stringify(all));emit();showProfile();});panel.append(save);const out=el('button','btn btn-outline-danger me-2 mb-2',tr('logout'));out.type='button';out.addEventListener('click',()=>{logout();close();});panel.append(out);const exit=el('button','btn btn-secondary mb-2','×');exit.setAttribute('aria-label','Close');exit.addEventListener('click',close);panel.append(exit);modal.classList.remove('d-none');modal.classList.add('d-flex');}
- function navButtons(){return{login:[...document.querySelectorAll('#nav-login-btn,#login-btn,[href="#login-modal"],[href="#catalog-login-modal"]')],register:[...document.querySelectorAll('#nav-signup-btn,#register-btn,[href="#signup-modal"],[href="#catalog-signup-modal"]')]};}
- function renderNav(){const u=currentProfile(),buttons=navButtons();buttons.login.concat(buttons.register).forEach(b=>b.classList.toggle('d-none',!!u));let b=document.querySelector('#togyz-profile-button');if(!b){b=el('button','btn btn-outline-dark ms-2');b.id='togyz-profile-button';b.type='button';const parent=buttons.register[0]?.parentElement||document.querySelector('#mainNavbar .d-flex')||document.querySelector('.navbar .container');parent?.append(b);b.addEventListener('click',showProfile);}b.classList.toggle('d-none',!u);b.textContent=u?'👤 '+u.name:'';document.querySelectorAll('#profile-btn,[data-profile-button]').forEach(other=>{if(other!==b)other.classList.add('d-none');});}
- function wireForms(){const signup=document.querySelector('#catalog-signup-form,#signup-form,#register-form,#registration-form,#auth-form');const signin=document.querySelector('#catalog-login-form,#login-form,#signin-form');if(signup){signup.addEventListener('submit',e=>{e.preventDefault();const name=field(signup,'#reg-name,[name="name"],[name="fullname"],input[type="text"]');const email=field(signup,'#reg-email,[name="email"],input[type="email"]');const password=field(signup,'#reg-pass,[name="password"],input[type="password"]');const confirm=field(signup,'[name="confirmPassword"],#reg-confirm,#confirm-password');const message=register(name?.value||'',email?.value||'',password?.value||'',confirm?confirm.value:(password?.value||''));statusMessage(signup,message||'Demo profile is ready. No real account was created.',message?'error':'success');if(!message)signup.reset();});}
- if(signin){signin.addEventListener('submit',e=>{e.preventDefault();const email=field(signin,'input[type="email"],#login-email');const message=login(email?.value||'');statusMessage(signin,message||'Demo profile selected.',message?'error':'success');});}
- document.querySelectorAll('input[type="password"]').forEach(inp=>{if(inp.dataset.showReady)return;inp.dataset.showReady='1';const btn=el('button','btn btn-sm btn-outline-secondary my-1','Show / Hide Password');btn.type='button';btn.addEventListener('click',()=>inp.type=inp.type==='password'?'text':'password');inp.insertAdjacentElement('afterend',btn);});}
- document.addEventListener('DOMContentLoaded',()=>{wireForms();renderNav();document.addEventListener('togyz:language',renderNav);});
-})();
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Кіру формалары
+  const loginForms = document.querySelectorAll('#index-login-form, #catalog-login-form, #order-login-form, #reviews-login-form, #size-login-form, #cart-login-form');
+  
+  loginForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = form.querySelector('input[type="email"]')?.value || 'User';
+      const userName = email.split('@')[0];
+
+      // Профильді localStorage-ке сақтау
+      localStorage.setItem('currentUser', JSON.stringify({ name: userName, email: email }));
+
+      const currentLang = localStorage.getItem('selectedLanguage') || 'kz';
+      const msg = currentLang === 'ru' ? `Добро пожаловать, ${userName}!` : 
+                 (currentLang === 'en' ? `Welcome, ${userName}!` : `Қош келдіңіз, ${userName}!`);
+      
+      alert(msg);
+      window.location.hash = '';
+      location.reload();
+    });
+  });
+
+  // Тіркелу формалары
+  const signupForms = document.querySelectorAll('#index-signup-form, #catalog-signup-form, #order-signup-form, #reviews-signup-form, #size-signup-form, #cart-signup-form');
+
+  signupForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameInput = form.querySelector('#reg-name')?.value || 'User';
+      const emailInput = form.querySelector('#reg-email')?.value || '';
+      const passInput = form.querySelector('input[type="password"]')?.value || '';
+
+      const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+      if (!passRegex.test(passInput)) {
+        alert('Қате! Құпия сөз кемінде 8 символдан, бас әріптен және саннан тұруы керек!');
+        return;
+      }
+
+      localStorage.setItem('currentUser', JSON.stringify({ name: nameInput, email: emailInput }));
+
+      alert('Тіркелу сәтті аяқталды!');
+      window.location.hash = '';
+      location.reload();
+    });
+  });
+});

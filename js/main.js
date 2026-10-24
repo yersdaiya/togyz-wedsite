@@ -1,23 +1,141 @@
 'use strict';
-function language(){const s=localStorage.getItem('selectedLanguage');return ['kz','ru','en'].includes(s)?s:'kz';}
-function tr(key){return translations[language()]?.[key]||key;}
-function el(tag,cls='',content){const n=document.createElement(tag);if(cls)n.className=cls;if(content!==undefined)n.textContent=content;return n;}
-function money(n){return Number(n).toLocaleString('ru-RU')+' ₸';}
-function statusMessage(parent,message,kind='success'){let n=parent.querySelector('.js-feedback');if(!n){n=el('p','js-feedback alert mt-2');n.setAttribute('role','status');n.setAttribute('aria-live','polite');parent.append(n);}n.className='js-feedback alert mt-2 alert-'+(kind==='error'?'danger':'success');n.textContent=message;return n;}
-function userKey(){const email=localStorage.getItem('togyzActiveEmail');return email?'togyzCart:'+encodeURIComponent(email):'togyzCart:guest';}
-function readCart(){try{const x=JSON.parse(localStorage.getItem(userKey())||'[]');return Array.isArray(x)?x:[];}catch{return [];}}
-function writeCart(cart){localStorage.setItem(userKey(),JSON.stringify(cart));document.dispatchEvent(new Event('togyz:cart'));}
-function addCart(id,size='M'){const p=productsData.find(x=>x.id===Number(id));if(!p||!p.sizes.includes(size))return false;const cart=readCart();const item=cart.find(x=>x.id===p.id&&x.size===size);if(item)item.quantity++;else cart.push({id:p.id,size,quantity:1});writeCart(cart);return true;}
-function cartTotals(){return readCart().reduce((a,x)=>{const p=productsData.find(y=>y.id===x.id);if(p){a.quantity+=x.quantity;a.total+=x.quantity*p.price;}return a;},{quantity:0,total:0});}
-function updateCartBadge(){document.querySelectorAll('[data-cart-count],#cart-count').forEach(n=>n.textContent=cartTotals().quantity);}
-function bind(selector,key,all=false){const nodes=all?document.querySelectorAll(selector):[document.querySelector(selector)];nodes.forEach(n=>{if(n)n.dataset.i18n=key;});}
-function bindPageTranslations(){const page=location.pathname.split('/').pop()||'index.html';const h=document.querySelector('main h1');if(h){const title={'index.html':'homeAbout','size-guide.html':'sizePageTitle','order.html':'orderTitle','reviews.html':'reviewsTitle','cart.html':'cartTitle'}[page];if(title)h.dataset.i18n=title;}
-if(page==='size-guide.html'){const head=document.querySelectorAll('main table thead th');['labelSize','sizeChest','sizeWaist','sizeHips'].forEach((key,i)=>{if(head[i])head[i].dataset.i18n=key;});}
-if(page==='order.html'){const labels=[...document.querySelectorAll('#order-checkout-form label')];['orderName','orderPhone','orderRegion','orderAddress','orderPayment'].forEach((key,i)=>{if(labels[i])labels[i].dataset.i18n=key;});}
-if(page==='reviews.html'){bind('main h2','reviewsForm');}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupLanguageDropdown();
+  updateAuthUI();
+  initScrollAnimations();
+
+  // Бет жүктелгенде сақталған тілді қолдану
+  const savedLang = localStorage.getItem('selectedLanguage') || 'kz';
+  changeLanguage(savedLang);
+});
+
+function setupLanguageDropdown() {
+  if (document.getElementById('language-select')) return;
+
+  const authContainer = document.querySelector('#mainNavbar .auth-buttons-container') || document.querySelector('#mainNavbar .d-flex');
+
+  if (authContainer) {
+    const langWrapper = document.createElement('div');
+    langWrapper.className = 'ms-2 d-inline-block align-middle';
+    langWrapper.innerHTML = `
+      <select id="language-select" class="form-select form-select-sm" style="width: auto; cursor: pointer; border-color: #5C061C; color: #5C061C; font-weight: bold; background-color: #FFFDF9;">
+        <option value="kz">🇰🇿 KZ</option>
+        <option value="ru">🇷🇺 RU</option>
+        <option value="en">🇬🇧 EN</option>
+      </select>
+    `;
+
+    authContainer.appendChild(langWrapper);
+
+    const selectEl = document.getElementById('language-select');
+    selectEl.value = localStorage.getItem('selectedLanguage') || 'kz';
+
+    selectEl.addEventListener('change', (e) => {
+      changeLanguage(e.target.value);
+    });
+  }
 }
-function translatePage(){const t=translations[language()];document.documentElement.lang=language()==='kz'?'kk':language();document.querySelectorAll('[data-i18n]').forEach(n=>{const v=t[n.dataset.i18n];if(v===undefined)return;if(n.matches('input,textarea'))n.placeholder=v;else n.textContent=v;});const route={'index.html':'navHome','catalog.html':'navCatalog','size-guide.html':'navSize','order.html':'navOrder','reviews.html':'navReviews','cart.html':'navCart'};document.querySelectorAll('a.nav-link').forEach(a=>{const p=(a.getAttribute('href')||'').split('?')[0].replace(/^\.\//,'');if(route[p])a.textContent=t[route[p]];});const sel=document.querySelector('#language-select');if(sel)sel.value=language();document.dispatchEvent(new CustomEvent('togyz:language'));}
-function changeLanguage(lang){if(!translations[lang])return;localStorage.setItem('selectedLanguage',lang);translatePage();}
-function setupLanguageDropdown(){let sel=document.querySelector('#language-select');if(!sel){const parent=document.querySelector('#mainNavbar .d-flex')||document.querySelector('.navbar .container');if(!parent)return;sel=el('select','form-select form-select-sm');sel.id='language-select';sel.setAttribute('aria-label','Language');[['kz','🇰🇿 KZ'],['ru','🇷🇺 RU'],['en','🇬🇧 EN']].forEach(([v,name])=>{const opt=el('option','',name);opt.value=v;sel.append(opt);});parent.append(sel);}sel.value=language();sel.addEventListener('change',()=>changeLanguage(sel.value));}
-function initScrollAnimations(){if(!('IntersectionObserver'in window))return;const obs=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add('is-visible');obs.unobserve(x.target);}}),{threshold:.1});document.querySelectorAll('section,.product-card').forEach(n=>{n.classList.add('fade-in-element');obs.observe(n);});}
-document.addEventListener('DOMContentLoaded',()=>{setupLanguageDropdown();bindPageTranslations();translatePage();updateCartBadge();initScrollAnimations();document.addEventListener('togyz:cart',updateCartBadge);document.addEventListener('togyz:profile',()=>{updateCartBadge();translatePage();});});
+
+function updateAuthUI() {
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const authContainer = document.querySelector('#mainNavbar .auth-buttons-container') || document.querySelector('#mainNavbar .d-flex');
+  if (!authContainer) return;
+
+  const loginBtn = document.getElementById('nav-login-btn');
+  const signupBtn = document.getElementById('nav-signup-btn');
+  let userProfileBadge = document.getElementById('user-profile-badge');
+
+  if (currentUser) {
+    if (loginBtn) loginBtn.classList.add('d-none');
+    if (signupBtn) signupBtn.classList.add('d-none');
+
+    if (!userProfileBadge) {
+      userProfileBadge = document.createElement('div');
+      userProfileBadge.id = 'user-profile-badge';
+      userProfileBadge.className = 'd-flex align-items-center gap-2';
+      authContainer.insertBefore(userProfileBadge, authContainer.firstChild);
+    }
+
+    const currentLang = localStorage.getItem('selectedLanguage') || 'kz';
+    const greeting = translations[currentLang]?.userGreeting || 'Сәлеметсіз бе';
+    const logoutText = translations[currentLang]?.navLogout || 'Шығу';
+
+    userProfileBadge.innerHTML = `
+      <span class="badge text-bg-light border px-2 py-2 fs-6" style="color: #5C061C; font-weight: 600;">
+        👤 ${greeting}, ${currentUser.name}!
+      </span>
+      <button id="logout-btn" class="btn btn-outline-danger btn-sm">${logoutText}</button>
+    `;
+
+    document.getElementById('logout-btn').addEventListener('click', () => {
+      localStorage.removeItem('currentUser');
+      location.reload();
+    });
+  } else {
+    if (loginBtn) loginBtn.classList.remove('d-none');
+    if (signupBtn) signupBtn.classList.remove('d-none');
+    if (userProfileBadge) userProfileBadge.remove();
+  }
+}
+
+function changeLanguage(lang) {
+  localStorage.setItem('selectedLanguage', lang);
+  
+  // Переключательдегі таңдауды синхрондау
+  const langSelect = document.getElementById('language-select');
+  if (langSelect) langSelect.value = lang;
+
+  const t = translations[lang];
+  if (!t) return;
+
+  // 1. Барлық data-i18n атрибуты бар елементтерді ауыстыру
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) {
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    }
+  });
+
+  // 2. Навбар сілтемелерін ауыстыру
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === 'index.html') link.textContent = t.navHome;
+    if (href === 'catalog.html') link.textContent = t.navCatalog;
+    if (href === 'size-guide.html') link.textContent = t.navSize;
+    if (href === 'order.html') link.textContent = t.navOrder;
+    if (href === 'reviews.html') link.textContent = t.navReviews;
+    if (href === 'cart.html') link.textContent = t.navCart;
+  });
+
+  // 3. Профиль мәтінін жаңарту
+  updateAuthUI();
+
+  // 4. Егер Каталог бетінде болсақ, карточкаларды қайта рендерлеу
+  if (typeof window.renderCatalog === 'function') {
+    window.renderCatalog();
+  }
+
+  // 5. Оқиғаны басқа модульдерге жіберу
+  window.dispatchEvent(new Event('language-changed'));
+}
+
+function initScrollAnimations() {
+  const elements = document.querySelectorAll('section, .card, h1, h2');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => {
+    el.classList.add('fade-in-element');
+    observer.observe(el);
+  });
+}

@@ -26,7 +26,7 @@
                 <li class="nav-item"><a class="nav-link active fw-bold" href="reviews.html" data-i18n="navReviews">ПІКІРЛЕР</a></li>
                 <li class="nav-item"><a class="nav-link" href="cart.html" data-i18n="navCart">СЕБЕТ 🛒</a></li>
             </ul>
-            <div class="d-flex justify-content-center gap-2 mt-3 mt-lg-0 align-items-center">
+            <div class="auth-buttons-container d-flex justify-content-center gap-2 mt-3 mt-lg-0 align-items-center">
                 <a href="#login-modal" id="nav-login-btn" class="btn btn-outline-dark btn-sm" data-i18n="navLogin">Кіру</a>
                 <a href="#signup-modal" id="nav-signup-btn" class="btn btn-dark btn-sm" data-i18n="navRegister">Тіркелу</a>
             </div>
@@ -45,14 +45,14 @@
                     <form id="add-review-form">
                         <div class="mb-3">
                             <label for="review-name" class="form-label fw-bold" data-i18n="nameLabel">Атыңыз:</label>
-                            <input type="text" id="review-name" class="form-control" placeholder="Атыңызды енгізіңіз" required>
+                            <input type="text" id="review-name" class="form-control" placeholder="Атыңызды енгізіңіз" data-i18n="phReviewName" required>
                         </div>
                         <div class="mb-4">
                             <label for="review-comment" class="form-label fw-bold" data-i18n="reviewLabel">Пікіріңіз:</label>
-                            <textarea id="review-comment" class="form-control" rows="5" placeholder="Дүкен немесе киім сапасы туралы пікіріңізді жазыңыз..." required></textarea>
+                            <textarea id="review-comment" class="form-control" rows="5" placeholder="Дүкен немесе киім сапасы туралы пікіріңізді жазыңыз..." data-i18n="phReviewComment" required></textarea>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" id="submit-review-btn" class="btn btn-dark" data-i18n="btnSendReview">Пікірді жіберу</button>
+                            <button type="submit" id="submit-review-btn" class="btn btn-dark" style="background-color: #5C061C; border: none;" data-i18n="btnSendReview">Пікірді жіберу</button>
                         </div>
                     </form>
                 </div>
@@ -70,7 +70,7 @@
                         <h3 class="h5 mb-0">Айгерім</h3>
                         <span class="badge text-bg-dark">★ 5/5</span>
                     </div>
-                    <p class="card-text text-body-secondary mb-0">Көйлектің сапасы өте керемет, дәл өлшеміме келді. Рахмет TOGYZ BRAND!</p>
+                    <p class="card-text text-body-secondary mb-0" data-i18n="review1Text">Көйлектің сапасы өте керемет, дәл өлшеміме келді. Рахмет TOGYZ BRAND!</p>
                 </article>
             </div>
             <div class="col-12 col-md-6" id="review-card-2">
@@ -79,7 +79,7 @@
                         <h3 class="h5 mb-0">Динара</h3>
                         <span class="badge text-bg-dark">★ 5/5</span>
                     </div>
-                    <p class="card-text text-body-secondary mb-0">Жеткізу өте жылдам болды. Заттарының тігісі таза, матасы ұнады.</p>
+                    <p class="card-text text-body-secondary mb-0" data-i18n="review2Text">Жеткізу өте жылдам болды. Заттарының тігісі таза, матасы ұнады.</p>
                 </article>
             </div>
         </div>
