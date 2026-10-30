@@ -2,15 +2,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   renderLookCards();
+  updateCartBadge();
 });
 
 // Тіл өзгергенде динамикалық түрде қайта рендер жасау
 window.renderCatalog = function() {
   renderLookCards();
+  updateCartBadge();
 };
 
 window.addEventListener('language-changed', () => {
   renderLookCards();
+  updateCartBadge();
 });
 
 function renderLookCards() {
@@ -102,4 +105,67 @@ function renderLookCards() {
 
     container.appendChild(lookBlock);
   });
+
+  // Батырмаларға басу оқиғасын қосу (Себетке қосу және анимация)
+  document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const itemId = parseInt(btn.getAttribute('data-id'));
+      const selectedSizeInput = document.querySelector(`input[name="size-${itemId}"]:checked`);
+      const size = selectedSizeInput ? selectedSizeInput.value : 'S';
+
+      addToCart(itemId, size);
+
+      // Батырмаға басылу анимациясын беру
+      btn.classList.add('btn-bounce');
+      setTimeout(() => btn.classList.remove('btn-bounce'), 200);
+    });
+  });
 }
+
+function addToCart(itemId, size) {
+  const item = productsData.find(p => p.id === itemId);
+  if (!item) return;
+
+  let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+  
+  const existingIndex = cart.findIndex(c => c.id === itemId && c.size === size);
+  if (existingIndex > -1) {
+    cart[existingIndex].quantity = (cart[existingIndex].quantity || 1) + 1;
+  } else {
+    cart.push({
+      id: item.id,
+      nameKz: item.nameKz,
+      nameRu: item.nameRu,
+      nameEn: item.nameEn,
+      price: item.price,
+      image: item.image,
+      size: size,
+      color: 'Black',
+      quantity: 1
+    });
+  }
+
+  localStorage.setItem('cartItems', JSON.stringify(cart));
+  updateCartBadge();
+  // Ескерту терезесі (alert) шықпайтын болды, орнына тек анимация мен сан жұмыс істейді!
+}
+
+function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const totalCount = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+
+  const cartNavLinks = document.querySelectorAll('a[href="cart.html"]');
+  cartNavLinks.forEach(link => {
+    const lang = localStorage.getItem('selectedLanguage') || 'kz';
+    const t = translations[lang] || translations.kz;
+    const baseText = t.navCart ? t.navCart.replace('🛒', '').trim() : 'СЕБЕТ';
+
+    if (totalCount > 0) {
+      link.innerHTML = `${baseText} <span class="badge rounded-pill bg-danger bounce-animation" id="cart-badge-count">${totalCount}</span> 🛒`;
+    } else {
+      link.innerHTML = `${baseText} 🛒`;
+    }
+  });
+}
+
+window.updateCartBadge = updateCartBadge;

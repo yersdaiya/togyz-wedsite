@@ -167,3 +167,121 @@ a:hover {
 .product-card:hover img, .card:hover img {
   transform: scale(1.03) !important;
 }
+
+
+@keyframes cartBounce {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.4) translateY(-6px); }
+  50% { transform: scale(0.85) translateY(0); }
+  75% { transform: scale(1.15) translateY(-3px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+.bounce-animation {
+  animation: cartBounce 0.5s ease-in-out;
+  display: inline-block;
+}
+
+
+.btn-bounce {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+.cart-qty-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: bold;
+  border: 1px solid #5C061C;
+  color: #5C061C;
+  background-color: #FDFCF9;
+  transition: all 0.2s ease;
+}
+
+.cart-qty-btn:hover {
+  background-color: #5C061C;
+  color: #ffffff;
+}
+
+.cart-qty-count {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 600;
+}
+
+select.form-select,
+.custom-styled-select {
+  background-color: #FDFCF9 !important;
+  color: #5C061C !important;
+  border: 1.5px solid #5C061C !important;
+  border-radius: 10px !important;
+  padding: 10px 15px !important;
+  font-weight: 500;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+select.form-select option,
+.custom-styled-select option {
+  background-color: #FDFCF9 !important;
+  color: #333333 !important;
+  padding: 10px;
+}
+
+select.form-select:focus {
+  border-color: #5C061C !important;
+  box-shadow: 0 0 0 0.25rem rgba(92, 6, 28, 0.15) !important;
+}
+
+/* Кастомды ашылатын меню стилі */
+.custom-styled-select {
+  background-color: #FDFCF9 !important;
+  color: #5C061C !important;
+  border: 1.5px solid #5C061C !important;
+  border-radius: 10px !important;
+  padding: 10px 15px !important;
+  font-weight: 500;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+.custom-dropdown-menu {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  background-color: #FDFCF9;
+  border: 1.5px solid #5C061C;
+  border-radius: 10px;
+  z-index: 1000;
+  padding: 5px 0;
+}
+
+.dropdown-header-group {
+  padding: 8px 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #888888;
+  text-transform: uppercase;
+  background-color: #F8F5EE;
+}
+
+.custom-dropdown-item {
+  padding: 10px 15px;
+  color: #333333;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.15s ease;
+}
+
+.custom-dropdown-item:hover {
+  background-color: #5C061C;
+  color: #ffffff;
+}
