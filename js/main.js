@@ -144,7 +144,13 @@ function translatePageFallback(lang) {
     if (txt === 'Телефон:' || txt === 'Phone:') el.textContent = t.phoneLabel;
 
     // Size Guide
-    if (txt === 'Өлшемдер кестесі' || txt === 'Таблица размеров' || txt === 'Size Guide') el.textContent = t.sizeGuideTitle;
+    if (txt === 'Өлшемдер кестесі' || txt === 'Таблица размеров' || txt === 'Size Guide') el.textContent = t.sizeGuideTitle;$("#hide").click(function(){
+  $("p").hide();
+});
+
+$("#show").click(function(){
+  $("p").show();
+});
     if (txt.includes('Өзіңізге сәйкес киім өлшемін') || txt.includes('Определите подходящий размер') || txt.includes('Determine your suitable clothing')) el.textContent = t.sizeGuideSub;
     if (txt === 'Өлшемді қалай анықтауға болады?' || txt === 'Как определить свой размер?' || txt === 'How to measure?') el.textContent = t.howToMeasureTitle;
 
@@ -178,3 +184,190 @@ function initScrollAnimations() {
     observer.observe(el);
   });
 }
+
+// TOGYZ Dark / Light Mode — барлық беттерде жұмыс істейді.
+document.addEventListener('DOMContentLoaded', () => {
+  initTogyzTheme();
+});
+
+function initTogyzTheme() {
+  if (!document.getElementById('togyz-theme-styles')) {
+    const style = document.createElement('style');
+    style.id = 'togyz-theme-styles';
+    style.textContent = `
+      body.togyz-dark {
+        background-color: #171515 !important;
+        color: #f2eeee !important;
+        color-scheme: dark;
+      }
+      body.togyz-dark main,
+      body.togyz-dark section,
+      body.togyz-dark footer,
+      body.togyz-dark .container,
+      body.togyz-dark .container-fluid {
+        color: #f2eeee;
+      }
+      body.togyz-dark .navbar,
+      body.togyz-dark .bg-light,
+      body.togyz-dark .look-card-wrapper,
+      body.togyz-dark .card,
+      body.togyz-dark .modal-content,
+      body.togyz-dark .table,
+      body.togyz-dark .list-group-item {
+        background-color: #242020 !important;
+        color: #f2eeee !important;
+        border-color: #514747 !important;
+      }
+      /* Dark theme for size guide and cart tables */
+      body.togyz-dark .bg-white,
+      body.togyz-dark .table-responsive,
+      body.togyz-dark #cart-main-container .table-responsive,
+      body.togyz-dark #size-table-section .table-responsive,
+      body.togyz-dark .card-body {
+        background-color: #242020 !important;
+        color: #f2eeee !important;
+        border-color: #514747 !important;
+      }
+      body.togyz-dark .table {
+        --bs-table-bg: #242020;
+        --bs-table-color: #f2eeee;
+        --bs-table-striped-bg: #302a2a;
+        --bs-table-striped-color: #f2eeee;
+        --bs-table-hover-bg: #3a3030;
+        --bs-table-hover-color: #ffffff;
+        --bs-table-border-color: #514747;
+        color: #f2eeee !important;
+        background-color: #242020 !important;
+      }
+      body.togyz-dark .table > :not(caption) > * > * {
+        background-color: var(--bs-table-bg) !important;
+        color: var(--bs-table-color) !important;
+        border-color: var(--bs-table-border-color) !important;
+        box-shadow: none !important;
+      }
+      body.togyz-dark .table-striped > tbody > tr:nth-of-type(odd) > * {
+        --bs-table-bg: #302a2a;
+        --bs-table-color: #f2eeee;
+      }
+      body.togyz-dark .table thead th {
+        background-color: #352b2d !important;
+        color: #ffffff !important;
+      }
+      body.togyz-dark .table .badge.text-bg-light {
+        background-color: #403638 !important;
+        color: #ffffff !important;
+        border-color: #76636a !important;
+      }
+      body.togyz-dark .text-dark,
+      body.togyz-dark .text-body,
+      body.togyz-dark h1,
+      body.togyz-dark h2,
+      body.togyz-dark h3,
+      body.togyz-dark h4,
+      body.togyz-dark h5,
+      body.togyz-dark p,
+      body.togyz-dark label,
+      body.togyz-dark th,
+      body.togyz-dark td,
+      body.togyz-dark .nav-link,
+      body.togyz-dark .navbar-brand {
+        color: #f2eeee !important;
+      }
+      body.togyz-dark .text-muted,
+      body.togyz-dark .text-secondary,
+      body.togyz-dark .text-body-secondary {
+        color: #c1b8b8 !important;
+      }
+      body.togyz-dark input,
+      body.togyz-dark select,
+      body.togyz-dark textarea {
+        background-color: #302a2a !important;
+        color: #f2eeee !important;
+        border-color: #625555 !important;
+      }
+      body.togyz-dark input::placeholder,
+      body.togyz-dark textarea::placeholder {
+        color: #b9aeae !important;
+      }
+      body.togyz-dark .border,
+      body.togyz-dark .border-top,
+      body.togyz-dark .border-bottom {
+        border-color: #514747 !important;
+      }
+      body.togyz-dark .btn-outline-secondary {
+        color: #eee !important;
+        border-color: #948686 !important;
+      }
+      body.togyz-dark .btn-outline-secondary:hover,
+      body.togyz-dark .btn-outline-secondary.active {
+        background-color: #5c061c !important;
+        color: #fff !important;
+      }
+      body.togyz-dark .modal-overlay {
+        background-color: rgba(0,0,0,.78) !important;
+      }
+      #togyz-theme-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        padding: 0;
+        border: 1px solid #5C061C;
+        border-radius: 50%;
+        background: #fffdf9;
+        color: #5C061C;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+      }
+      body.togyz-dark #togyz-theme-toggle {
+        background: #302a2a;
+        color: #fff;
+        border-color: #a56a7a;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  const savedTheme = localStorage.getItem('togyzTheme') || 'light';
+  applyTogyzTheme(savedTheme);
+
+  const authContainer =
+    document.querySelector('.auth-buttons-container') ||
+    document.querySelector('#mainNavbar .navbar-nav')?.parentElement ||
+    document.querySelector('.navbar .container');
+
+  if (!authContainer || document.getElementById('togyz-theme-toggle')) return;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.id = 'togyz-theme-toggle';
+  button.className = 'ms-2';
+  button.addEventListener('click', () => {
+    const nextTheme = document.body.classList.contains('togyz-dark') ? 'light' : 'dark';
+    applyTogyzTheme(nextTheme);
+    localStorage.setItem('togyzTheme', nextTheme);
+  });
+  authContainer.appendChild(button);
+  updateTogyzThemeButton();
+}
+
+function applyTogyzTheme(theme) {
+  document.body.classList.toggle('togyz-dark', theme === 'dark');
+  updateTogyzThemeButton();
+}
+
+function updateTogyzThemeButton() {
+  const button = document.getElementById('togyz-theme-toggle');
+  if (!button) return;
+  const isDark = document.body.classList.contains('togyz-dark');
+  const lang = localStorage.getItem('selectedLanguage') || 'kz';
+  // Keep the navbar compact: show only the theme icon, without extra text.
+  button.textContent = isDark ? '☀️' : '🌙';
+  button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  button.setAttribute('title', isDark ? 'Light mode' : 'Dark mode');
+}
+
+window.addEventListener('language-changed', updateTogyzThemeButton);

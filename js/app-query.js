@@ -1,52 +1,40 @@
-/* 
-  TOGYZ BRAND — Assignment 4 (jQuery)
-  jQuery Version: 3.7.1
-  Why jQuery is used: To simplify DOM manipulation, handle event delegation for dynamic cart items,
-  and implement smooth UI effects (fadeIn, slideToggle) with concise code.
-*/
-
 $(function () {
   'use strict';
 
   // LocalStorage-тен себетті жүктеу
   let userCart = JSON.parse(localStorage.getItem('userCart')) || [];
 
-  /* =========================================================
-     1. SELECTORS, TRAVERSAL & DELEGATION (Себетке тауар қосу)
-     Replacing plain JS addEventListener with jQuery delegated event
-     ========================================================= */
+
   $(document).on('click', '.add-to-cart-btn', function (e) {
     e.preventDefault();
-    const $btn = $(this); // $(this) қолданылды
+    const $btn = $(this);
 
-    // Қайталап басылып кетпеуі үшін (Debounce)
+    // Қателікпен екі рет қосылып кетпеуі үшін қорғаныс (Debounce)
     if ($btn.data('processing')) return;
     $btn.data('processing', true);
     setTimeout(() => $btn.removeData('processing'), 300);
 
     const productId = parseInt($btn.attr('data-id'), 10);
-    const $card = $btn.closest('.card'); // Traversal: .closest()
+    const $card = $btn.closest('.card');
     let selectedSize = 'S';
 
     if ($card.length) {
-      const checkedSize = $card.find('input[type="radio"]:checked').val(); // Traversal: .find()
+      const checkedSize = $card.find('input[type="radio"]:checked').val();
       const selectSize = $card.find('select').val();
       selectedSize = checkedSize || selectSize || 'S';
     }
 
+    // Тауарды себетке бір-ақ рет қосатын функция
     addToCart(productId, selectedSize);
 
-    // Chaining & Animation: батырма секіру эффектісі
+    // Батырманың анимациясы
     $btn.addClass('btn-bounce').delay(200).queue(function (next) {
       $(this).removeClass('btn-bounce');
       next();
     });
   });
 
-  /* =========================================================
-     2. CART QUANTITY MANAGEMENT (+ және - батырмалары)
-     Delegated events for dynamically rendered cart items
-     ========================================================= */
+
   $(document).on('click', '.btn-increase-qty', function () {
     const index = $(this).closest('tr').data('index'); // Traversal: .closest()
     userCart[index].quantity += 1;
@@ -72,9 +60,7 @@ $(function () {
     });
   });
 
-  /* =========================================================
-     3. CART LOGIC & RENDER (DOM manipulation with .append & .html)
-     ========================================================= */
+
   function addToCart(id, size) {
     const product = typeof productsData !== 'undefined' 
       ? productsData.find(p => p.id === id) 
@@ -168,23 +154,20 @@ $(function () {
         </tr>
       `);
 
-      $cartList.append($row); // .append() қолданылды
+      $cartList.append($row); 
     });
 
     $cartTotal.text(`${totalSum.toLocaleString()} ₸`);
     $cartCount.text(totalItems.toString());
   }
 
-  /* =========================================================
-     4. FORM VALIDATION WITH JQUERY (order.html формасы)
-     ========================================================= */
+
   $('#order-checkout-form').on('submit', function (e) {
-    e.preventDefault(); // preventDefault қолданылды
+    e.preventDefault(); 
 
     let isValid = true;
     const $form = $(this);
 
-    // Әр инпутты тексеру (.trim() және .addClass('is-invalid'))
     $form.find('input[required], select[required]').each(function () {
       const $field = $(this);
       const val = $.trim($field.val());
@@ -209,18 +192,16 @@ $(function () {
 
     if (!isValid) return;
 
-    // Сәтті орындалғанда эффект көрсету
     $form.slideUp(400, function () {
       $('#order-success-message').fadeIn(300).removeClass('d-none');
     });
   });
 
-  // Элементті түзеткен сәтте қатені тазалау (.on('input change'))
   $('#order-checkout-form').on('input change', '.is-invalid', function () {
     $(this).removeClass('is-invalid');
   });
 
-  // Алғашқы іске қосу
+
   renderCartUI();
   updateCartBadge();
 });
