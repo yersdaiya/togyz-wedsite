@@ -164,3 +164,45 @@ function renderCartUI() {
   if (cartTotal) cartTotal.textContent = `${totalSum.toLocaleString()} ₸`;
   if (cartCount) cartCount.textContent = totalItems.toString();
 }
+// 1. Себетті жүктеу
+let cart = JSON.parse(localStorage.getItem('togyz_cart')) || [];
+
+// 2. Себетті сақтау функциясы
+function saveCart() {
+    localStorage.setItem('togyz_cart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+// 3. Жоғарғы мәзірдегі себеттегі тауар санын жаңарту
+function updateCartCount() {
+    let totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+    $('.cart-counter').text(totalCount);
+}
+
+// 4. Каталогтан тауарды себетке қосу
+$(document).on('click', '.add-to-cart-btn', function() {
+    let $card = $(this).closest('.product-card');
+    let product = {
+        id: $card.data('id'),
+        name: $card.find('.product-title').text(),
+        price: parseFloat($card.find('.product-price').text()),
+        size: $card.find('.size-select').val() || 'M',
+        image: $card.find('img').attr('src'),
+        quantity: 1
+    };
+
+    let existingItem = cart.find(item => item.id === product.id && item.size === product.size);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push(product);
+    }
+
+    saveCart();
+    alert('Тауар себетке сәтті қосылды!');
+});
+
+// Бет ашылғанда санды жаңарту
+$(document).ready(function() {
+    updateCartCount();
+});

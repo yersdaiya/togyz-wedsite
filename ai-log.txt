@@ -1,20 +1,49 @@
 # AI Assistance Log
 
+
+
 **Project:** TOGYZ BRAND  
-**AI Tool:** ChatGPT  
-**Period:** October 2026
 
-## AI Usage
+**Developer:** Dariya Yersainova;Gaukhar Amanbay
 
-1. **JavaScript Planning:** Asked for help organizing JavaScript files and website functionality.
-2. **Language Switching:** Received explanations and code suggestions for KZ/RU/EN translations.
-3. **Catalog:** Used AI assistance to structure 6 outfits and 12 individual clothing items.
-4. **Shopping Cart:** Discussed adding products, updating quantities, and calculating totals.
-5. **User Profiles:** Received suggestions for registration, login, editing profiles, and logout.
-6. **Order Form:** Discussed form validation and demonstration confirmations.
-7. **Debugging:** Asked for help fixing language switching, cart, and profile errors.
-8. **Design:** Generated visual examples of a modern clothing catalog.
-9. **Documentation:** Used AI to draft README and AI Log content.
+**Period:** October – November 2026
+
+
+
+## AI Usage Summary
+
+
+
+1. **JavaScript & jQuery Architecture:**
+
+   - Designed modular JS logic splitting functions into `cart.js`, `catalog.js`, `size-guide.js`, and `main.js`.
+
+   
+
+2. **LocalStorage Integration:**
+
+   - Generated template code for saving and reading JSON cart objects (`togyz_cart`) and user theme preferences (`togyz_theme`).
+
+
+
+3. **Dark / Light Mode Implementation:**
+
+   - Assisted in organizing CSS variables and event listeners for instant theme toggling.
+
+
+
+4. **Cart Logic & Dynamic Subtotaling:**
+
+   - Implemented array methods (`reduce`, `find`, `splice`) to calculate total cart items and subtotal prices dynamically.
+
+
+
+5. **Documentation & Quality Control:**
+
+   - Formatted `README.md`, `quality-pass.txt`, and project structure documentation for Endterm submissions.
+
+
 
 ## Conclusion
-ChatGPT was used for explanations, code suggestions, debugging, design ideas, and documentation. The final implementation requires developer review and testing.
+
+AI tools were used for code structuring, debugging assistance, and writing standardized project documentation. All generated scripts and CSS modifications were reviewed, customized, and verified manually.
