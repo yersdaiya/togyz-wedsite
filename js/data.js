@@ -102,6 +102,12 @@ const translations = {
     sizeGuideSub: "Өзіңізге сәйкес киім өлшемін кесте арқылы анықтаңыз",
     howToMeasureTitle: "Өлшемді қалай анықтауға болады?",
     thBust: "Көкірек айналымы (см)", thWaist: "Бел айналымы (см)", thHips: "Жамбас айналымы (см)",
+    measureBustTitle: "Көкірек",
+    measureBustDesc: "Көкірек айналымын ең кең жерінен өлшеңіз.",
+    measureWaistTitle: "Бел",
+    measureWaistDesc: "Бел айналымын табиғи бел сызығынан өлшеңіз.",
+    measureHipsTitle: "Жамбас",
+    measureHipsDesc: "Жамбас айналымын ең кең жерінен өлшеңіз.",
 
     // Cart
     cartTitle: "СІЗДІҢ СЕБЕТІҢІЗ",
@@ -153,6 +159,12 @@ const translations = {
     sizeGuideSub: "Определите подходящий размер одежды с помощью таблицы",
     howToMeasureTitle: "Как определить свой размер?",
     thBust: "Обхват груди (см)", thWaist: "Обхват талии (см)", thHips: "Обхват бедер (см)",
+    measureBustTitle: "Грудь",
+    measureBustDesc: "Измерьте обхват груди по самой широкой части.",
+    measureWaistTitle: "Талия",
+    measureWaistDesc: "Измерьте обхват талии по естественной линии.",
+    measureHipsTitle: "Бедра",
+    measureHipsDesc: "Измерьте обхват бедер по самой широкой части.",
 
     cartTitle: "ВАША КОРЗИНА",
     cartSub: "Проверьте выбранные товары",
@@ -201,6 +213,12 @@ const translations = {
     sizeGuideSub: "Determine your suitable clothing size using the table below",
     howToMeasureTitle: "How to measure?",
     thBust: "Bust Circumference (cm)", thWaist: "Waist Circumference (cm)", thHips: "Hips Circumference (cm)",
+    measureBustTitle: "Bust",
+    measureBustDesc: "Measure around the fullest part of your bust.",
+    measureWaistTitle: "Waist",
+    measureWaistDesc: "Measure around your natural waistline.",
+    measureHipsTitle: "Hips",
+    measureHipsDesc: "Measure around the fullest part of your hips.",
 
     cartTitle: "YOUR CART",
     cartSub: "Check your selected items",

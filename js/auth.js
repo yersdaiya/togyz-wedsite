@@ -1,7 +1,33 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Кіру формалары
+
+  const passwordInputs = document.querySelectorAll('input[type="password"]');
+  passwordInputs.forEach(input => {
+    if (input.parentNode.classList.contains('password-wrapper')) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'password-wrapper position-relative d-flex align-items-center';
+    input.parentNode.insertBefore(wrapper, input);
+    wrapper.appendChild(input);
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.type = 'button';
+    toggleBtn.className = 'btn position-absolute end-0 border-0 bg-transparent text-secondary';
+    toggleBtn.style.zIndex = '10';
+    toggleBtn.style.padding = '0.375rem 0.75rem';
+    toggleBtn.innerHTML = '👁️';
+    wrapper.appendChild(toggleBtn);
+
+
+    toggleBtn.addEventListener('click', () => {
+      const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+      input.setAttribute('type', type);
+      toggleBtn.innerHTML = type === 'password' ? '👁️' : '🙈';
+    });
+  });
+
+
   const loginForms = document.querySelectorAll('#index-login-form, #catalog-login-form, #order-login-form, #reviews-login-form, #size-login-form, #cart-login-form');
   
   loginForms.forEach(form => {
@@ -10,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = form.querySelector('input[type="email"]')?.value || 'User';
       const userName = email.split('@')[0];
 
-      // Профильді localStorage-ке сақтау
+
       localStorage.setItem('currentUser', JSON.stringify({ name: userName, email: email }));
 
       const currentLang = localStorage.getItem('selectedLanguage') || 'kz';
@@ -23,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Тіркелу формалары
+
   const signupForms = document.querySelectorAll('#index-signup-form, #catalog-signup-form, #order-signup-form, #reviews-signup-form, #size-signup-form, #cart-signup-form');
 
   signupForms.forEach(form => {

@@ -104,7 +104,7 @@ function changeLanguage(lang) {
     }
   });
 
-  // 2. Полная обработка текста на всех страницах
+  // 2. Барлық беттердегі мәтіндерді ауыстыру
   translatePageFallback(lang);
   updateAuthUI();
 
@@ -144,15 +144,19 @@ function translatePageFallback(lang) {
     if (txt === 'Телефон:' || txt === 'Phone:') el.textContent = t.phoneLabel;
 
     // Size Guide
-    if (txt === 'Өлшемдер кестесі' || txt === 'Таблица размеров' || txt === 'Size Guide') el.textContent = t.sizeGuideTitle;$("#hide").click(function(){
-  $("p").hide();
-});
-
-$("#show").click(function(){
-  $("p").show();
-});
+    if (txt === 'Өлшемдер кестесі' || txt === 'Таблица размеров' || txt === 'Size Guide') el.textContent = t.sizeGuideTitle;
     if (txt.includes('Өзіңізге сәйкес киім өлшемін') || txt.includes('Определите подходящий размер') || txt.includes('Determine your suitable clothing')) el.textContent = t.sizeGuideSub;
     if (txt === 'Өлшемді қалай анықтауға болады?' || txt === 'Как определить свой размер?' || txt === 'How to measure?') el.textContent = t.howToMeasureTitle;
+
+    // Size Guide Cards (Көкірек, Бел, Жамбас)
+    if (txt === 'Көкірек' || txt === 'Грудь' || txt === 'Bust') el.textContent = t.measureBustTitle;
+    if (txt.includes('Көкірек айналымын ең кең') || txt.includes('Измерьте обхват груди') || txt.includes('fullest part of your bust')) el.textContent = t.measureBustDesc;
+
+    if (txt === 'Бел' || txt === 'Талия' || txt === 'Waist') el.textContent = t.measureWaistTitle;
+    if (txt.includes('Бел айналымын табиғи') || txt.includes('Измерьте обхват талии') || txt.includes('natural waistline')) el.textContent = t.measureWaistDesc;
+
+    if (txt === 'Жамбас' || txt === 'Бедра' || txt === 'Hips') el.textContent = t.measureHipsTitle;
+    if (txt.includes('Жамбас айналымын ең кең') || txt.includes('Измерьте обхват бедер') || txt.includes('fullest part of your hips')) el.textContent = t.measureHipsDesc;
 
     // Cart
     if (txt === 'СІЗДІҢ СЕБЕТІҢІЗ' || txt === 'ВАША КОРЗИНА' || txt === 'YOUR CART') el.textContent = t.cartTitle;
@@ -218,7 +222,6 @@ function initTogyzTheme() {
         color: #f2eeee !important;
         border-color: #514747 !important;
       }
-      /* Dark theme for size guide and cart tables */
       body.togyz-dark .bg-white,
       body.togyz-dark .table-responsive,
       body.togyz-dark #cart-main-container .table-responsive,
@@ -363,8 +366,6 @@ function updateTogyzThemeButton() {
   const button = document.getElementById('togyz-theme-toggle');
   if (!button) return;
   const isDark = document.body.classList.contains('togyz-dark');
-  const lang = localStorage.getItem('selectedLanguage') || 'kz';
-  // Keep the navbar compact: show only the theme icon, without extra text.
   button.textContent = isDark ? '☀️' : '🌙';
   button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   button.setAttribute('title', isDark ? 'Light mode' : 'Dark mode');
