@@ -1,25 +1,84 @@
-TOGYZ BRAND — Web Technologies 1 (Endterm) Project: TOGYZ BRAND Fashion Boutique WebsiteCourse: Web Technologies 1 (Front End)Developer: Dariya Yersainova ; Gaukhar Amanbay
- Repository: https://github.com/yersdaiya/togyz-wedsite1. Project OverviewTOGYZ BRAND is a fully responsive fashion boutique website developed using HTML5, CSS3, Bootstrap 5.3.2, and JavaScript (jQuery).The project represents the complete front-end web application for Assignments 4–5, focusing on interactive features, client-side data management (localStorage), DOM manipulation, dynamic rendering, and responsive dark/light mode toggling.2. Technologies UsedHTML5: Semantic page structure, accessibility, and modern forms.CSS3: Responsive styling, CSS variables for dark/light themes, custom animations.Bootstrap 5.3.2: Responsive layouts, navigation, cards, modals, and grid system.JavaScript & jQuery: Interactive functionality, event handling, DOM manipulation, dynamic HTML generation.localStorage API: Client-side persistent storage for cart state and theme preferences.Git and GitHub: Version control, branching, and assignment tagging.3. Website PagesPageDescriptionindex.htmlHomepage, brand storytelling, features, and dynamic dark/light mode togglecatalog.htmlInteractive clothing collection with size selection and Add to Cart logicsize-guide.htmlInteractive size chart and size recommendation calculatorcart.htmlDynamic shopping cart with quantity adjustment, item removal, and subtotal calculationorder.htmlCheckout form with real-time field validation and demo confirmationreviews.htmlCustomer reviews page with dynamic submission and validation4. Implemented Functionality & Features4.1 Dark / Light Mode Theme SwitchingUser preference can be toggled across the site.Current active theme is saved in localStorage (togyz_theme), ensuring persistence across page reloads.4.2 Shopping Cart Logic (cart.js)Add to Cart: Users can select clothing items along with preferred sizes.Persistence: Cart contents are saved in localStorage under togyz_cart.Cart Management: Incremental/decremental quantity controls, individual item removal, and full cart clearing.Dynamic Calculation: Total price and badge counters update automatically upon changes.4.3 Interactive Size Guide (size-guide.js)Accepts chest, waist, and hip measurements.Evaluates input and suggests the most fitting clothing size (S, M, L, XL).4.4 Checkout & Form Validation (order.js, reviews.js)Validates user input fields (name, phone number, address) before processing.Generates demonstration confirmations without external server calls.5. Directory Structure├── index.html
+# 🛍️ TOGYZ BRAND — Fashion Boutique Web Application
+
+<p align="center">
+  <b>Web Technologies 1 (Endterm) Project</b><br>
+  Modern and stylish women's fashion boutique e-commerce web application developed for Kazakhstan.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
+</p>
+
+---
+
+## 👥 Developers
+* **Dariya Yersainova**
+* **Gaukhar Amanbay**
+
+---
+
+## 🚀 Project Overview
+**TOGYZ BRAND** is a fully responsive e-commerce front-end web application built for Assignments 4–5. It features a rich user interface, interactive shopping cart management, multilingual support (KZ / RU / EN), dark/light mode toggling, and real-time form validations.
+
+🌐 **Live Demo / Repository:** [GitHub Repository](https://github.com/yersdaiya/togyz-wedsite)[cite: 23]
+
+---
+
+## ✨ Key Features & Functionality
+
+* 🌓 **Dark / Light Theme Switcher:** Persistent theme preference saved in `localStorage` (`togyz_theme`).
+* 🌍 **Multilingual Support:** Dynamic language translation (Kazakh 🇰🇿, Russian 🇷🇺, English 🇬🇧) across all pages.
+* 🛒 **Interactive Shopping Cart:** 
+  * Add products with custom sizes (S, M, L, XL) and colors.
+  * Real-time quantity adjustment (+ / -) and item removal.
+  * Persistent cart state using `localStorage` (`userCart`).
+* 📐 **Interactive Size Guide:** Helps users find their perfect fit based on bust, waist, and hip measurements[cite: 23].
+* 📦 **Checkout & Validation:** Real-time form validation for user details, regional addresses (with map links), and phone number formatting[cite: 23].
+* ⭐ **Customer Reviews:** Interactive review section with star ratings and photo upload capabilities.
+
+---
+
+## 🗂️ Project Pages & Structure
+
+| Page | Description |
+| :--- | :--- |
+| **`index.html`** | Homepage with brand storytelling, boutique galleries, philosophy, and branches[cite: 23]. |
+| **`catalog.html`** | Interactive clothing collection with category filtering, search, and size selection[cite: 23]. |
+| **`size-guide.html`** | Interactive size chart and measurement instructions[cite: 23]. |
+| **`cart.html`** | Dynamic shopping cart with subtotal calculation and summary[cite: 23]. |
+| **`order.html`** | Checkout form with region selection, address suggestions, and order confirmation[cite: 23]. |
+| **`reviews.html`** | Customer reviews page with dynamic submission, star ratings, and photo uploads[cite: 23]. |
+
+---
+
+## 📁 Directory Structure
+
+```text
+togyz-website/
+│
+├── css/
+│   ├── base.css
+│   ├── dariya.css
+│   └── gaukhar.css
+│
+├── js/
+│   ├── data.js
+│   ├── main.js
+│   ├── cart.js
+│   ├── order.js
+│   └── reviews.js
+│
+├── images/
+│   └── (Product & look images)
+│
+├── index.html
 ├── catalog.html
 ├── size-guide.html
 ├── cart.html
 ├── order.html
 ├── reviews.html
-├── css/
-│   ├── base.css
-│   ├── dariya.css
-│   └── gaukhar.css
-├── js/
-│   ├── data.js
-│   ├── main.js
-│   ├── catalog.js
-│   ├── cart.js
-│   ├── order.js
-│   ├── reviews.js
-│   └── size-guide.js
-├── README.md
-├── quality-pass.txt
-├── ai-log.txt
-└── checklist.md
-6. How to Run the ProjectClone the repository:git clone https://github.com/yersdaiya/togyz-wedsite.git
-Open the project directory in Visual Studio Code.Launch index.html using Live Server.Test theme switching, product selection, size guide, cart modifications, and checkout forms.7. Submission StatusStatus: Fully completed and tested.Tags: endterm
+└── README.md
